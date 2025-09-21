@@ -1,3 +1,4 @@
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -7,16 +8,16 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    lib: {
-      entry: "src/main.tsx",
-      name: "WafidCenterContent",
-      formats: ["iife"],
-      fileName: () => "content.js"
-    },
     rollupOptions: {
-      external: [],
+      input: {
+        content: resolve(__dirname, "src/main.tsx"),
+        background: resolve(__dirname, "src/background.ts")
+      },
       output: {
-        assetFileNames: "assets/[name][extname]"
+        entryFileNames: ({ name }) =>
+          name === "background" ? "background.js" : "content.js",
+        assetFileNames: "assets/[name][extname]",
+        chunkFileNames: "assets/[name].js"
       }
     }
   },
