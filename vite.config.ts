@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     lib: {
-      entry: "src/content/main.tsx",
+      entry: "src/main.tsx",
       name: "WafidCenterContent",
       formats: ["iife"],
       fileName: () => "content.js"

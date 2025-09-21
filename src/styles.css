@@ -1,0 +1,20 @@
+/* minimal styles for the floating panel */
+.wch-container{ position:fixed; right:16px; bottom:16px; z-index:99999; font-family:ui-sans-serif,system-ui; }
+.wch-toggle{ background:#111827;color:#fff;border:1px solid #111827;border-radius:8px;padding:8px 10px;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.18); }
+.wch-toggle:disabled{opacity:.6;cursor:not-allowed;}
+.wch-panel{ position:fixed; right:16px; bottom:60px; width:min(420px,92vw); max-height:70vh; overflow:auto; background:#fff; color:#111; border:1px solid #e5e7eb; border-radius:12px; box-shadow:0 20px 45px rgba(0,0,0,.22); }
+.wch-panel-header{ display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border-bottom:1px solid #f1f5f9; position:sticky; top:0; background:#fff; }
+.wch-panel-title{ font-weight:700; margin:0; }
+.wch-close{ background:#fff; border:1px solid #e5e7eb; padding:4px 8px; border-radius:8px; cursor:pointer; }
+.wch-panel-body{ padding:12px; display:grid; gap:10px; }
+.wch-search{ width:100%; border:1px solid #d1d5db; border-radius:8px; padding:8px 10px; }
+.wch-group{ border:1px solid #f1f5f9; border-radius:10px; }
+.wch-group-title{ padding:8px 10px; font-weight:600; background:#f9fafb; border-bottom:1px solid #f1f5f9; }
+.wch-group-list{ display:grid; grid-template-columns:1fr; }
+.wch-center-button{ display:flex; align-items:center; justify-content:space-between; padding:8px 10px; border-top:1px solid #f7f7f7; background:#fff; cursor:pointer; }
+.wch-center-button:hover{ background:#f9fafb; }
+.wch-center-name{ font-weight:600; }
+.wch-center-code{ opacity:.7; font-mono:monospace; }
+.wch-empty{ opacity:.75; }
+.wch-footnote{ font-size:12px; opacity:.7; }
+.wch-hidden-by-extension{ display:none !important; }
