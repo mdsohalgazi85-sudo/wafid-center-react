@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Wafid Center Helper",
+  "version": "1.0.0",
+  "description": "Quickly search and fill Bangladeshi medical center codes on wafid.com appointments.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://wafid.com/appointment/*",
+        "https://wafid.com/book-appointment/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["https://wafid.com/*"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "wafid-center-react-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "postcss": "^8.5.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.266",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.1",
+    "@vitejs/plugin-react": "4.3.2",
+    "typescript": "5.5.4",
+    "vite": "5.4.8"
+  }
+}
