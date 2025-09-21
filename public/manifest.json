@@ -16,8 +16,7 @@
         "https://wafid.com/*"
       ],
       "js": [
-        "content.js",
-        "background.js"
+        "content.js"
       ],
       "css": [
         "assets/styles.css"
