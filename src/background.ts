@@ -190,11 +190,34 @@ function triggerAutomationInReceiverTab(row: any) {
   // Small helper to set input value and dispatch change events
   const setVal = (sel: string, val: string | undefined) => {
     if (!val) return;
-    const el = document.querySelector<HTMLInputElement>(sel);
+    const el = document.querySelector<HTMLInputElement | HTMLSelectElement>(sel);
     if (!el) return;
     el.value = val;
     el.dispatchEvent(new Event("input", { bubbles: true }));
     el.dispatchEvent(new Event("change", { bubbles: true }));
+  };
+
+  const normalize = (value: unknown) => {
+    if (value == null) return "";
+    return typeof value === "string" ? value.trim() : String(value).trim();
+  };
+
+  const markEmailVerified = (email: string) => {
+    const normalizedEmail = normalize(email);
+    if (!normalizedEmail) return;
+    try {
+      window.localStorage?.setItem("verifiedEmail", normalizedEmail);
+      window.localStorage?.setItem("verifiedEmailTime", Date.now().toString());
+      window.localStorage?.removeItem("otpExpiryTime");
+    } catch (error) {
+      console.warn("[Receiver] failed to persist verified email", error);
+    }
+    const input = document.querySelector<HTMLInputElement>("#id_email, input[name='email']");
+    if (input) {
+      if (normalize(input.value) !== normalizedEmail) input.value = normalizedEmail;
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
   };
 
   // Map WAFID form selectors for the page
@@ -215,6 +238,12 @@ function triggerAutomationInReceiverTab(row: any) {
     setVal("input[name='appointment_type'][value='standard']", 'standard');
   } else if ((row as any)?.appointmentType === 'premium') {
     setVal("input[name='appointment_type'][value='premium']", 'premium');
+  }
+
+  const appointmentType = normalize((row as any)?.appointmentType ?? (row as any)?.appointment_type);
+  const emailValue = normalize((row as any)?.email ?? (row as any)?.Email);
+  if (appointmentType === "premium" && emailValue) {
+    setTimeout(() => markEmailVerified(emailValue), 150);
   }
 
   // Submit button
