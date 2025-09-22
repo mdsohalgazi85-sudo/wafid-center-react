@@ -10,17 +10,17 @@
   const pendingRequests = new Map();
 
   window.addEventListener("message", (event) => {
-    console.log(event, 'event')
     try {
-      if (!isAllowedOrigin(event.origin)) {
-        console.warn("[BRIDGE] blocked origin:", event.origin);
-        return;
-      }
-
+      console.log(!isAllowedOrigin(event.origin), 'all or')
+      // if (!isAllowedOrigin(event.origin)) {
+      //   console.warn("[BRIDGE] blocked origin:", event.origin);
+      //   return;
+      // }
+      
       const data = event.data;
-
+      
+      console.log(data, 'data')
       if (!data || typeof data !== "object" || data.type !== requestType) return;
-
       const {
         type: _ignoredType,
         requestId,
@@ -40,9 +40,10 @@
         autoCloseMs?: number;
         [key: string]: unknown;
       };
-
+      
       if (!requestId || pendingRequests.has(requestId)) return;
-
+      
+      console.log(event, 'event')
       const timerId = setTimeout(() => {
         pendingRequests.delete(requestId);
         const timeoutResponse = {
@@ -68,6 +69,7 @@
       };
 
       chrome.runtime.sendMessage(bridgeRequest, (response) => {
+            console.log(response, 'bridgeRequest')
         const lastError = chrome.runtime?.lastError;
         const requestEntry = pendingRequests.get(requestId);
         if (!requestEntry) return;

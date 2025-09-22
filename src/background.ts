@@ -26,6 +26,7 @@ const DEFAULT_RECEIVER_URL = "https://wafid.com/book-appointment/";
 
 // ====== Lifecycle logs ======
 chrome.runtime.onInstalled.addListener((details) => {
+  
   console.log(`${DEBUG_PREFIX} Installed`, details);
 });
 
