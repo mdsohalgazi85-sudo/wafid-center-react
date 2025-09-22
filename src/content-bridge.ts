@@ -1,116 +1,76 @@
-type BridgeRequest = {
-  type: "automation-run-row";
-  requestId: string;
-  index: number;
-  row: unknown;
-  timeoutMs?: number;
-};
-
-type BridgeResponse = {
-  type: "automation-result";
-  requestId: string;
-  ok: boolean;
-  error?: string;
-  _via?: string;
-};
-
 (() => {
-  const ALLOWED_ORIGINS = new Set<string>([
-    "http://localhost:3000", // Allowed origins for the message
-  ]);
+  const allowedOrigins = new Set(["http://localhost:3000", "https://wafid.com"]);
 
-  const REQ_TYPE = "automation-run-row";
-  const RES_TYPE = "automation-result";
-  const DEFAULT_TIMEOUT = 60_000;
+  const requestType = "automation-run-row";
+  const responseType = "automation-result";
+  const defaultTimeout = 60000;
 
-  const isAllowedOrigin = (origin: string) =>
-    ALLOWED_ORIGINS.size === 0 || ALLOWED_ORIGINS.has(origin);
+  const isAllowedOrigin = (origin: string) => allowedOrigins.size === 0 || allowedOrigins.has(origin);
 
-  const pending = new Map<
-    string,
-    { origin: string; timerId: ReturnType<typeof setTimeout> }
-  >();
+  const pendingRequests = new Map();
 
-  console.log("[BRIDGE] loaded on", location.origin);
-
-  window.addEventListener("message", (event: MessageEvent) => {
-    console.log("[BRIDGE] window.message", {
-      origin: event.origin,
-      data: event.data,
-    });
-
+  window.addEventListener("message", (event) => {
+    console.log(event, 'event')
     try {
       if (!isAllowedOrigin(event.origin)) {
         console.warn("[BRIDGE] blocked origin:", event.origin);
         return;
       }
 
-      const data = event.data as BridgeRequest;
-      if (!data || typeof data !== "object") return;
-      if (data.type !== REQ_TYPE) return;
+      const data = event.data;
+
+      if (!data || typeof data !== "object" || data.type !== requestType) return;
 
       const { requestId, index, row, timeoutMs } = data;
-      if (!requestId) return;
-      if (pending.has(requestId)) return;
+
+      if (!requestId || pendingRequests.has(requestId)) return;
 
       const timerId = setTimeout(() => {
-        pending.delete(requestId);
-        const payload: BridgeResponse = {
-          type: RES_TYPE,
+        pendingRequests.delete(requestId);
+        const timeoutResponse = {
+          type: responseType,
           requestId,
           ok: false,
           error: "Timeout waiting for background response",
           _via: "content-bridge-timeout",
         };
+        window.postMessage(timeoutResponse, event.origin);
+      }, timeoutMs ?? defaultTimeout);
+
+      pendingRequests.set(requestId, { origin: event.origin, timerId });
+
+      chrome.runtime.sendMessage({ type: requestType, requestId, index, row }, (response) => {
+        const lastError = chrome.runtime?.lastError;
+        const requestEntry = pendingRequests.get(requestId);
+        if (!requestEntry) return;
+
+        clearTimeout(requestEntry.timerId);
+        pendingRequests.delete(requestId);
+
+        const payload = response && typeof response === "object"
+          ? { ...response, _via: "content-bridge" }
+          : {
+              type: responseType,
+              requestId,
+              ok: !lastError,
+              error: lastError?.message ?? (response == null ? "No response" : undefined),
+              _via: "content-bridge",
+            };
+
         try {
-          window.postMessage(payload, event.origin);
-        } catch (e) {
-          console.error("[BRIDGE] postMessage timeout notify failed:", e);
+          window.postMessage(payload, requestEntry.origin);
+        } catch (error) {
+          console.error("[BRIDGE] postMessage back failed:", error);
         }
-      }, timeoutMs ?? DEFAULT_TIMEOUT);
-
-      pending.set(requestId, { origin: event.origin, timerId });
-
-      chrome.runtime.sendMessage(
-        { type: REQ_TYPE, requestId, index, row },
-        (res?: BridgeResponse) => {
-          const lastErr = chrome.runtime?.lastError;
-          const entry = pending.get(requestId);
-          if (!entry) return;
-
-          clearTimeout(entry.timerId);
-          pending.delete(requestId);
-
-          const payload: BridgeResponse =
-            res && typeof res === "object"
-              ? { ...res, _via: "content-bridge" }
-              : {
-                  type: RES_TYPE,
-                  requestId,
-                  ok: !lastErr,
-                  error:
-                    lastErr?.message ??
-                    (res == null ? "No response" : undefined),
-                  _via: "content-bridge",
-                };
-
-          try {
-            console.log("[BRIDGE] posting back to page:", payload);
-            window.postMessage(payload, entry.origin);
-          } catch (e) {
-            console.error("[BRIDGE] postMessage back failed:", e);
-          }
-        }
-      );
-    } catch (err) {
+      });
+    } catch (error) {
       try {
-        const reqId =
-          (event?.data as BridgeRequest)?.requestId ?? `req_${Date.now()}`;
-        const errorPayload: BridgeResponse = {
-          type: RES_TYPE,
-          requestId: reqId,
+        const requestId = event?.data?.requestId ?? `req_${Date.now()}`;
+        const errorPayload = {
+          type: responseType,
+          requestId,
           ok: false,
-          error: String(err),
+          error: String(error),
           _via: "content-bridge-catch",
         };
         console.error("[BRIDGE] exception:", errorPayload);
@@ -123,7 +83,7 @@ type BridgeResponse = {
 
   try {
     window.postMessage({ type: "bridge-ready", at: Date.now() }, "*");
-  } catch (e) {
-    console.warn("[BRIDGE] bridge-ready post failed:", e);
+  } catch (error) {
+    console.warn("[BRIDGE] bridge-ready post failed:", error);
   }
 })();

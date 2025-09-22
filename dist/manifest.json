@@ -5,31 +5,38 @@
   "description": "Web page ↔ Extension AI bridge with React UI",
   "background": {
     "service_worker": "assets/background.js",
-    "type": "module"
+    "type": "module"  
   },
-  "permissions": ["storage", "scripting", "tabs"],
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs"
+  ],
   "host_permissions": [
-    "https://wafid.com/book-appointment/*"
-   
+    "https://wafid.com/*",
+    "http://localhost:3000/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://wafid.com/book-appointment/*"
-       
+        "https://wafid.com/*",
+        "http://localhost:3000/*"
       ],
       "js": ["assets/content-bridge.js"],
       "run_at": "document_start"
     },
     {
       "matches": [
-        "https://wafid.com/book-appointment/*"
-       
+        "https://wafid.com/*",
+        "http://localhost:3000/*"
       ],
       "js": ["assets/content-main.js"],
-      "css": ["assets/styles.css"],
+      "css": ["assets/content-main.css"],
       "run_at": "document_idle"
     }
   ],
-  "action": { "default_title": "WCH" }
+  "action": {
+    "default_title": "WCH",
+    "default_popup": "popup.html"  
+  }
 }
