@@ -1,0 +1,2136 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://objectstorage.me-jeddah-1.oraclecloud.com/n/axcv6afvufi6/b/Rum-JS-Public/o/elastic-apm-rum.umd.min.js"
+            crossorigin></script>
+
+    <script>
+        elasticApm.init({
+            serviceName: 'GCC-Frontend',
+            serverUrl: 'https://apm-lean.acuative-me.com:8200',
+            environment: 'Production',
+        })
+    </script>
+
+
+    <link rel="icon" type="image/x-icon" href="/static/svg/logo-favicon-light.svg">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146902071-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-146902071-1');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Wafid | وافد</title>
+    <meta name="description" content="Wafid is a program under the umbrella of the Gulf Health Council that enables individuals bound to work or reside in the GCC to book their medical check-up appointments.
+    وافد هو احدى برامج مجلس الصحة الخليجي غرضه توفير مواعيد الفحص الطبي للوافدين القادمين الى دول مجلس التعاون الخليجي بغرض العمل او الإقامة.">
+    <meta name="keywords"
+          content="Wafid, GCC, GHC, Medical center, Gulf Cooperation Council States, Medical Examinations, health check-up, appointment, medical centers accreditation, Accreditation status">
+
+
+    <!-- ISO 3166-1-alpha-2 Flags style-->
+    
+
+    <link rel="stylesheet" href="/static/country-flags/image_sprite/ip2location-image-sprite.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" crossorigin=""/>
+
+
+    
+    
+        
+
+            <link rel="stylesheet" href="/static/vendor/semantic/dist/semantic.min.css">
+            <link rel="stylesheet" href="/static/css/semantic-responsive.css">
+
+            <!-- Glide.js styles -->
+            <link rel="stylesheet" href="/static/css/vendor/glide.core.min.css">
+            <link rel="stylesheet" href="/static/css/vendor/glide.theme.min.css">
+
+            <!-- CropperJS styles -->
+            <link rel="stylesheet" href="/static/css/vendor/cropper.min.css">
+
+            <!-- Custom styles -->
+            <link rel="stylesheet" href="/static/css/main.css">
+            <link rel="stylesheet" href="/static/css/menu.css">
+            <link rel="stylesheet" href="/static/css/instant-notifications.css">
+
+            <!-- Components -->
+            <link rel="stylesheet" href="/static/css/components/breadcrumbs.css">
+            <link rel="stylesheet" href="/static/css/components/cards.css">
+            <link rel="stylesheet" href="/static/css/components/forms.css">
+            <link rel="stylesheet" href="/static/css/components/glide.css">
+            <link rel="stylesheet" href="/static/css/components/menu.css">
+            <link rel="stylesheet" href="/static/css/components/table.css">
+            <link rel="stylesheet" href="/static/css/components/message.css">
+            <link rel="stylesheet" href="/static/css/components/modal.css">
+            <link rel="stylesheet" href="/static/css/components/icons.css">
+        
+    
+    
+        <link rel="stylesheet" href="/static/css/pages/booking.css">
+    
+
+    
+</head>
+<body>
+
+    
+        <div class="ui menu basic borderless gcc-menu">
+            
+                <div class="item">
+                    <a href="/" id="gcc-header-icon-continer" class="header item brand menu-lsc-fix">
+                        <img class="ui image" src="/static/svg/logo.svg">
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                    <div class="ui container">
+                    <div class="ui grid gcc-submenu-wrapper">
+                        <div class="full wide column">
+                            <div class="ui menu stackable gcc-submenu">
+                                <div class="ui container centered gcc-submenu-continer width-edit">
+                                    
+
+    
+
+<a class=" item" href="/">Home</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        GHC accreditation-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/apply/">Apply for accreditation </a>-->
+<!--            <a class="item"-->
+<!--               href="/accreditation/status/">Check accreditation status</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+
+
+    <div class="ui pointing dropdown item active-item">
+        Medical Examinations
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/book-appointment/">Book an Appointment </a>
+            <a class="item"
+               href="/search-slip/">Appointment Slips</a>
+            <a class="item"
+               href="/medical-status-search/">Medical Examination Result</a>
+        </div>
+    </div>
+
+
+
+<!--<a class=" item"-->
+<!--   href="/medical-status-search/">Health Check-Up</a>-->
+
+<!--<a class=" item"-->
+<!--   href="/medical-center/medical-center/">Medical centers</a>-->
+
+
+    <div class="ui pointing dropdown item ">
+        Medical Centers
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item"
+               href="/medical-center/medical-center/">Wafid Medical Centers Accreditation</a>
+            <a class="item"
+               href="/medical-center/search/">Medical Centers List</a>
+        </div>
+    </div>
+
+
+
+<a class=" item"
+   href="/guidelines/">Guidelines</a>
+
+<!---->
+<!--    <div class="ui pointing dropdown item ">-->
+<!--        Check status-->
+<!--        <i class="dropdown icon"></i>-->
+<!--        <div class="menu">-->
+<!--            <a class="item"-->
+<!--               href="/medical-status-search/">Check candidate status</a>-->
+<!--            <a class="item"-->
+<!--               href="/certificate-search/">Membership certeficate</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+
+
+<a class=" item"
+   href="/faq/">FAQs</a>
+<!--<a class="item" href="/static/pdf/Regulations%20of%20Medical%20Examination%20of%20Expatriates%20Coming%20to%20GCC%20States%20for%20Work%20or%20Residence.pdf"-->
+<!--   target="_blank">Rules and regulations</a>-->
+
+<a class=" item" href="/contact-us/">Contact Us</a>
+
+
+
+                                    
+                                        <a class="item mobile tablet only"
+                                           href="/select-type/">Login</a>
+                                    
+
+                                    
+                                        <div class="item support-phone mobile tablet only">
+                                            <img src="/static/svg/headset.svg" class="support-icon">
+                                            <b>
+                                                <a href="tel:+966920023560">+966920023560</a>
+                                            </b>
+                                        </div>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+                <div class="right menu" style="padding-right: 3%">
+                    
+                    
+                        <div class="item tablet or lower hidden">
+                            <a class="ui secondary button" id="gcc-header-login-botton"
+                               href="/select-type/">Login</a>
+                        </div>
+                    
+
+                    <div class="mobile tablet only right menu menu-icon menu-lsc-fix">
+                        <button class="button basic" id="menubutton">
+                            <i class="bars icon"></i>
+                            <i class="x icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+            
+        </div>
+    
+
+    
+    
+
+
+
+
+
+    <main class="">
+        
+
+<div id="generic-download-file" data-bs-dismiss="modal" class="messages" style="display: none;">
+    <div class="ui message" id="message-type">
+        <i class="close icon" onclick="closeMessageBox()"></i>
+        <div class="header" id="message-content">
+        </div>
+    </div>
+</div>
+
+<script>
+    // Close button handler
+    function closeMessageBox() {
+        const msgBox = document.getElementById("generic-download-file");
+        msgBox.style.display = 'none';
+    }
+</script>
+
+        
+    <div id="js-messages"></div>
+    <div id="loading-screen" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+">
+        <div class="ui active dimmer">
+            <div class="ui massive text loader">Loading...</div>
+        </div>
+    </div>
+    <div class="ui container content-container">
+
+        <div class="ui container">
+            <h4 class="ui header">
+                <div class="content md-header booking-heading">Book a medical examination appointment</div>
+            </h4>
+            <div class="ui fluid card gcc-card">
+                <div class="content booking-form">
+                    <form autocomplete="off"
+                          class="ui form booking-appointment-form "
+                          method="post" novalidate>
+                        <input type="hidden" name="csrfmiddlewaretoken" value="JipeP16DFs0maYEro4j3aaUjKSXHBjk6jBnJ5YWzzUb47rwZWkLjtcnDyK9nv1w9">
+                        <div class="form-fields-container">
+                            
+                            
+                            
+                            
+                            
+                            
+
+<style>
+    .hidden {
+        display: none !important;
+    }
+
+    .ui.form .field.error input:not([type]),
+    .ui.form .field.error input[type=date],
+    .ui.form .field.error input[type=datetime-local],
+    .ui.form .field.error input[type=email],
+    .ui.form .field.error input[type=file],
+    .ui.form .field.error input[type=number],
+    .ui.form .field.error input[type=password],
+    .ui.form .field.error input[type=search],
+    .ui.form .field.error input[type=tel],
+    .ui.form .field.error input[type=text],
+    .ui.form .field.error input[type=time],
+    .ui.form .field.error input[type=url],
+    .ui.form .field.error select,
+    .ui.form .field.error textarea,
+    .ui.form .fields.error .field input:not([type]),
+    .ui.form .fields.error .field input[type=date],
+    .ui.form .fields.error .field input[type=datetime-local],
+    .ui.form .fields.error .field input[type=email],
+    .ui.form .fields.error .field input[type=file],
+    .ui.form .fields.error .field input[type=number],
+    .ui.form .fields.error .field input[type=password],
+    .ui.form .fields.error .field input[type=search],
+    .ui.form .fields.error .field input[type=tel],
+    .ui.form .fields.error .field input[type=text],
+    .ui.form .fields.error .field input[type=time],
+    .ui.form .fields.error .field input[type=url],
+    .ui.form .fields.error .field select,
+    .ui.form .fields.error .field textarea {
+        border-color: #EB363D !important;
+    }
+
+   
+</style>
+<h4 class="ui header">
+    <div class="content md-header booking-heading">Appointment Information</div>
+</h4>
+
+<div class="fields-container">
+    <h4 class="ui header">Appointment Location</h4>
+    <div class="three fields">
+        
+        
+<div class="field " >
+	
+		<label>
+			Country
+			
+		</label>
+	
+
+	
+		
+			<select name="country" required id="id_country">
+  <option value="" selected>Select Country</option>
+
+  <option value="DZ">Algeria</option>
+
+  <option value="AO">Angola</option>
+
+  <option value="BD">Bangladesh</option>
+
+  <option value="BR">Burundi</option>
+
+  <option value="CM">Cameroon</option>
+
+  <option value="TD">Chad</option>
+
+  <option value="EGY">Egypt</option>
+
+  <option value="ETH">Ethiopia</option>
+
+  <option value="GN">Ghana</option>
+
+  <option value="GT">Guatemala</option>
+
+  <option value="ACT">India</option>
+
+  <option value="IDN">Indonesia</option>
+
+  <option value="JR">Jordan</option>
+
+  <option value="KN">Kenya</option>
+
+  <option value="LB">Lebanon</option>
+
+  <option value="MW">Malawi</option>
+
+  <option value="MI">Mali</option>
+
+  <option value="MR">Morocco</option>
+
+  <option value="NEP">Nepal</option>
+
+  <option value="NG">Niger</option>
+
+  <option value="NIG">Nigeria</option>
+
+  <option value="PAK">Pakistan</option>
+
+  <option value="PA">Panama</option>
+
+  <option value="PHL">Philippines</option>
+
+  <option value="SL">Sierra Leone</option>
+
+  <option value="so">Somalia</option>
+
+  <option value="Sri">Sri Lanka</option>
+
+  <option value="SUD">Sudan</option>
+
+  <option value="SYR">Syria</option>
+
+  <option value="TNZ">Tanzania</option>
+
+  <option value="THI">Thailand</option>
+
+  <option value="TUN">Tunesia</option>
+
+  <option value="TUR">Turkey</option>
+
+  <option value="UG">Uganda</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+        
+        
+<div class="field " >
+	
+		<label>
+			City
+			
+		</label>
+	
+
+	
+		
+			<select name="city" required id="id_city">
+  <option value="" selected>Select City</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+        
+        
+<div class="field " >
+	
+		<label>
+			Country Traveling To
+			
+		</label>
+	
+
+	
+		
+			<select name="traveled_country" required id="id_traveled_country">
+  <option value="" selected>Select Country Travelling To</option>
+
+  <option value="BH">Bahrain</option>
+
+  <option value="KW">Kuwait</option>
+
+  <option value="OM">Oman</option>
+
+  <option value="QA">Qatar</option>
+
+  <option value="SA">Saudi Arabia</option>
+
+  <option value="UAE">UAE</option>
+
+  <option value="YEM">Yemen</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+    </div>
+</div>
+<br><br>
+<div class="fields-container-appointment-type fields-container-appointment-type-js">
+    <h4 class="ui header">Appointment Type</h4>
+    <div class="field">
+        
+<div class="field " >
+	
+
+	
+		
+			<div class="inline-radio-container">
+    
+        
+            <div class="card selected">
+                <div class="content">
+                    <div class="ui radio checkbox">
+                        
+
+<input
+    type="radio"
+    name="appointment_type"
+    id="id_appointment_type_0"
+    value="standard"
+    required
+    
+/>
+
+
+                    </div>
+                    <div class="info">
+                        <h3>Standard Appointment</h3>
+                        <p>A basic appointment scheduled based on availability, without additional customization.</p>
+                        <span class="price">$10</span>
+                    </div>
+                </div>
+            </div>
+        
+    
+        
+            <div class="card ">
+                <div class="content">
+                    <div class="ui radio checkbox">
+                        
+
+<input
+    type="radio"
+    name="appointment_type"
+    id="id_appointment_type_1"
+    value="premium"
+    required
+    
+/>
+
+
+                    </div>
+                    <div class="info">
+                        <h3>Premium Appointment</h3>
+                        <p>A flexible booking that gives you full control to choose your preferred medical center, appointment date for a seamless and convenient experience.</p>
+                        <span class="price">$25</span>
+                    </div>
+                </div>
+            </div>
+        
+    
+</div>
+		
+	
+	
+	
+		
+	
+</div>
+
+    </div>
+</div>
+
+<div id="choose-premium-mc" style="margin-top: 3%;">
+    <div class="premium-fields-container">
+        <h4 class="ui header">Choose Medical Center</h4>
+        <div class="two fields">
+            <div class="field">
+                
+                
+<div class="field " >
+	
+		<label>
+			Medical Center
+			
+		</label>
+	
+
+	
+		
+			<select name="premium_medical_center" id="id_premium_medical_center">
+  <option value="" selected>Select Medical Center</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            </div>
+            <div class="field mc-details-column" style="margin-top: 3.5%;">
+                <h3 id="examination-price-field"></h3>
+            </div>
+        </div>
+        <div class="two fields mc-info-area" style="border-radius: 8px; width: 100%; height: 69%; ">
+            <div class="field">
+                <div id="map" style="height: 260px; width: 500px; position: relative; bottom: -5%;"></div>
+            </div>
+            <div class="field mc-details-column">
+                <h3 id="mc-name-field" style="margin-top: 3%;"></h3>
+                <p id="address-info-pt-1-field"></p>
+                <p id="address-info-pt-2-field"></p>
+                <p id="address-info-pt-3-field"></p>
+                <p id="address-info-pt-4-field"></p>
+                <button id="working-hours-btn" class="ui button"
+                        style="border-radius: 4px; position: relative; top: 6%; width: 300px; height: 44.04px; background: #FFFFFF; border: 1px solid #E1E1E1; align-items: center; display: flex; justify-content: space-between; padding: 0 12px;">
+                    Working Hours
+                    <img src="/static/svg/clock.svg" alt="Clock Icon" style="width: 20px; height: 20px;"/>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Modal for Working Hours -->
+    <div id="working-hours-modal" class="ui modal">
+        <div class="header">Working Hours</div>
+        <div class="content">
+            <ul id="working-hours-list"></ul>
+        </div>
+    </div>
+
+    <div class="fields-container">
+        <h4 class="ui header">Schedule your appointment</h4>
+        <div class="two fields" style="margin-bottom: 0;">
+            
+            
+<div class="field " >
+	
+		<label>
+			Appointment Date
+			
+		</label>
+	
+
+	
+		
+			<style>
+    td.disabled {
+    color: #ccc !important;
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+
+<div class="ui calendar calendar-js">
+
+    <div class="ui input right icon">
+        <i class="calendar outline icon"></i>
+        <input type="text" name="appointment_date" placeholder="Select Date" id="id_appointment_date">
+
+
+    </div>
+</div>
+		
+	
+	
+	
+		
+	
+</div>
+
+        </div>
+        <div class="field-error-message" id="appointment-date-error" style="display: none;">
+                <i class="times circle icon"></i>
+                There are no available slots for this medical center
+            </div>
+    </div>
+</div>
+
+<div id="choose-mc" style="margin-top: 3%;">
+    <div class="fields-container mc" style="height: 148px;">
+        <h4 class="ui header">Choose Medical Center</h4>
+        <div class="two fields">
+            <div class="field medical-center-field medical-center-field-js">
+                
+                
+<div class="field " >
+	
+		<label>
+			Medical Center
+			
+		</label>
+	
+
+	
+		
+			<select name="medical_center" id="id_medical_center">
+  <option value="" selected>Select Medical Center</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="fields-container" style="height: 100%;">
+    <h4 class="ui header">Candidate information</h4>
+    <div class="field">
+        <div class="three fields" style="margin-bottom: -1%">
+            
+            
+<div class="field " >
+	
+		<label>
+			First Name
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="first_name" placeholder="First name" maxlength="50" required id="id_first_name">
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Last Name
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="last_name" placeholder="Last name" maxlength="50" required id="id_last_name">
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Date of Birth
+			
+		</label>
+	
+
+	
+		
+			<style>
+    td.disabled {
+    color: #ccc !important;
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+
+<div class="ui calendar calendar-js">
+
+    <div class="ui input right icon">
+        <i class="calendar outline icon"></i>
+        <input type="text" name="dob" placeholder="Select Date" required id="id_dob">
+
+
+    </div>
+</div>
+		
+	
+	
+	
+		
+	
+</div>
+
+        </div>
+    </div>
+    <div class="field">
+        <div class="three fields" style="margin-bottom: -1%">
+            
+            
+<div class="field " >
+	
+		<label>
+			Nationality
+			
+		</label>
+	
+
+	
+		
+			<select name="nationality" required id="id_nationality">
+  <option  value="" selected>Select Nationality</option>
+
+  <option  value="1049">Afghan</option>
+
+  <option  value="2">Albanian</option>
+
+  <option  value="1012">Algeria</option>
+
+  <option  value="3">Algerian</option>
+
+  <option  value="1070">Angolan</option>
+
+  <option  value="8">Argentinian</option>
+
+  <option  value="9">Armenian</option>
+
+  <option  value="10">Australian</option>
+
+  <option  value="11">Austrian</option>
+
+  <option  value="12">Azerbaijani</option>
+
+  <option  value="14">Bahraini</option>
+
+  <option  value="15">Bangladeshi</option>
+
+  <option  value="19">Belarusian</option>
+
+  <option  value="20">Belgian</option>
+
+  <option  value="21">Belizean</option>
+
+  <option  value="23">Bhutanese</option>
+
+  <option  value="25">Bosnian</option>
+
+  <option  value="26">Brazilian</option>
+
+  <option  value="1014">Britain</option>
+
+  <option  value="1077">Bulgarian</option>
+
+  <option  value="30">Burkinabe</option>
+
+  <option  value="32">Burundian</option>
+
+  <option  value="33">Cambodian</option>
+
+  <option  value="34">Cameroonian</option>
+
+  <option  value="35">Canadian</option>
+
+  <option  value="38">Chadian</option>
+
+  <option  value="40">Chinese</option>
+
+  <option  value="41">Colombian</option>
+
+  <option  value="1072">Cuban</option>
+
+  <option  value="47">Cypriot</option>
+
+  <option  value="48">Czech</option>
+
+  <option  value="49">Danish</option>
+
+  <option  value="50">Djibouti</option>
+
+  <option  value="1050">Dominica</option>
+
+  <option  value="52">Dutch</option>
+
+  <option  value="54">Ecuadorean</option>
+
+  <option data-required="True" value="55">Egyptian</option>
+
+  <option  value="58">Eritrean</option>
+
+  <option  value="60">Ethiopian</option>
+
+  <option  value="177">Filipino</option>
+
+  <option  value="63">Finnish</option>
+
+  <option  value="64">French</option>
+
+  <option  value="68">German</option>
+
+  <option  value="69">Ghanaian</option>
+
+  <option  value="70">Greek</option>
+
+  <option  value="1076">Guatemalan</option>
+
+  <option  value="74">GuineanGuyanese</option>
+
+  <option  value="1067">Guineense</option>
+
+  <option  value="1">Indian</option>
+
+  <option  value="81">Indonesian</option>
+
+  <option  value="82">Iranian</option>
+
+  <option  value="83">Iraqi</option>
+
+  <option  value="84">Irish</option>
+
+  <option  value="86">Italian</option>
+
+  <option  value="87">Ivorian</option>
+
+  <option  value="88">Jamaican</option>
+
+  <option  value="89">Japanese</option>
+
+  <option  value="90">Jordanian</option>
+
+  <option  value="91">Kazakhstani</option>
+
+  <option  value="92">Kenyan</option>
+
+  <option  value="94">Kuwaiti</option>
+
+  <option  value="1080">Kyrgyzstani</option>
+
+  <option  value="96">Laotian</option>
+
+  <option  value="98">Lebanese</option>
+
+  <option  value="100">Libyan</option>
+
+  <option  value="102">Lithuanian</option>
+
+  <option  value="105">Malagasy</option>
+
+  <option  value="1069">Malawian</option>
+
+  <option  value="1015">Malaysia</option>
+
+  <option  value="108">Maldivian</option>
+
+  <option  value="109">Malian</option>
+
+  <option  value="110">Maltese</option>
+
+  <option  value="112">Mauritanian</option>
+
+  <option  value="114">Mexican</option>
+
+  <option  value="1066">Montenegrin</option>
+
+  <option  value="119">Moroccan</option>
+
+  <option  value="1068">Myanmar</option>
+
+  <option  value="125">Nepalese</option>
+
+  <option  value="127">New Zealander</option>
+
+  <option  value="130">Nigerian</option>
+
+  <option  value="1073">Nigerien</option>
+
+  <option  value="133">Norwegian</option>
+
+  <option  value="134">Omani</option>
+
+  <option  value="135">Pakistani</option>
+
+  <option  value="1007">Palestine</option>
+
+  <option  value="137">Panamanian</option>
+
+  <option  value="141">Peruvian</option>
+
+  <option  value="142">Polish</option>
+
+  <option  value="1064">Portuguese</option>
+
+  <option  value="144">Qatari</option>
+
+  <option  value="145">Romanian</option>
+
+  <option  value="146">Russian</option>
+
+  <option  value="1071">Rwandan</option>
+
+  <option  value="1060">Saint Kitts and Nevis</option>
+
+  <option  value="148">Saudi</option>
+
+  <option  value="1074">Senegalese</option>
+
+  <option  value="150">Serbian</option>
+
+  <option  value="1053">Sierra Leonean</option>
+
+  <option  value="1062">Sierra Leonean</option>
+
+  <option  value="1081">singapore</option>
+
+  <option  value="1079">Slovakian</option>
+
+  <option  value="1078">Slovenian</option>
+
+  <option  value="152">Somali</option>
+
+  <option  value="1011">South Africa</option>
+
+  <option  value="154">South Korean</option>
+
+  <option  value="156">Sri Lankan</option>
+
+  <option  value="157">Sudanese</option>
+
+  <option  value="189">Swedish</option>
+
+  <option  value="159">Swiss</option>
+
+  <option  value="160">Syrian</option>
+
+  <option  value="161">Taiwanese</option>
+
+  <option  value="162">Tajik</option>
+
+  <option  value="163">Tanzanian</option>
+
+  <option  value="164">Thai</option>
+
+  <option  value="195">Togolese</option>
+
+  <option  value="194">Tunisian</option>
+
+  <option  value="165">Turkish</option>
+
+  <option  value="1063">Turkmen</option>
+
+  <option  value="166">Ugandan</option>
+
+  <option  value="167">Ukrainian</option>
+
+  <option  value="1013">United states of America</option>
+
+  <option  value="169">Uzbekistani</option>
+
+  <option  value="185">Vanuatu</option>
+
+  <option  value="170">Venezuelan</option>
+
+  <option  value="171">Vietnamese</option>
+
+  <option  value="172">YEMENI</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Gender
+			
+		</label>
+	
+
+	
+		
+			<select name="gender" required id="id_gender">
+  <option value="" selected>---------</option>
+
+  <option value="male">Male</option>
+
+  <option value="female">Female</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Marital status
+			
+		</label>
+	
+
+	
+		
+			<select name="marital_status" required id="id_marital_status">
+  <option value="" selected>---------</option>
+
+  <option value="married">Married</option>
+
+  <option value="unmarried">Single</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+        </div>
+    </div>
+    <div class="field">
+        <div class="three fields" style="margin-bottom: -1%">
+            
+            
+<div class="field " >
+	
+		<label>
+			Passport number №
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="passport" maxlength="50" required id="id_passport">
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Confirm Passport №
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="confirm_passport" maxlength="50" required id="id_confirm_passport">
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Passport Issue Date
+			
+		</label>
+	
+
+	
+		
+			<style>
+    td.disabled {
+    color: #ccc !important;
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+
+<div class="ui calendar calendar-js">
+
+    <div class="ui input right icon">
+        <i class="calendar outline icon"></i>
+        <input type="text" name="passport_issue_date" placeholder="Select Date" required id="id_passport_issue_date">
+
+
+    </div>
+</div>
+		
+	
+	
+	
+		
+	
+</div>
+
+        </div>
+    </div>
+    <div class="field">
+        <div class="three fields">
+            
+            
+<div class="field " >
+	
+		<label>
+			Passport Issue Place
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="passport_issue_place" maxlength="50" required id="id_passport_issue_place">
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+            
+<div class="field " >
+	
+		<label>
+			Passport Expiry Date
+			
+		</label>
+	
+
+	
+		
+			<style>
+    td.disabled {
+    color: #ccc !important;
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+
+<div class="ui calendar calendar-js">
+
+    <div class="ui input right icon">
+        <i class="calendar outline icon"></i>
+        <input type="text" name="passport_expiry_on" placeholder="Select Date" required id="id_passport_expiry_on">
+
+
+    </div>
+</div>
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+            
+<div class="field " >
+	
+		<label>
+			Visa Type
+			
+		</label>
+	
+
+	
+		
+			<select name="visa_type" required id="id_visa_type">
+  <option value="" selected>Select Visa Type</option>
+
+  <option value="wv">Work Visa</option>
+
+  <option value="fv">Family Visa</option>
+
+  <option value="sv">Study Visa</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            
+        </div>
+        <div class="field">
+            <div class="three fields">
+                <div id="email-field-container" class="field">
+                    
+                    
+<div class="field " >
+	
+		<label>
+			Email Address
+			
+		</label>
+	
+
+	
+		
+			<input type="email" name="email" placeholder="your@mail.com" maxlength="320" required id="id_email">
+		
+	
+	
+	
+		
+	
+</div>
+
+                </div>
+
+
+
+                
+                
+<div class="field " >
+	
+		<label>
+			Phone №
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="phone" class="phone" maxlength="14" required id="id_phone">
+		
+	
+	
+	
+		
+	
+</div>
+
+                
+                
+<div class="field " >
+	
+		<label>
+			National ID
+			
+		</label>
+	
+
+	
+		
+			<input type="text" name="national_id" maxlength="50" required id="id_national_id">
+		
+	
+	
+	
+		
+	
+</div>
+
+                
+            </div>
+        </div>
+        <div class="two fields">
+            
+<div class="field " >
+	
+		<label>
+			Position applied for
+			
+				<span class="optional">Optional</span>
+			
+		</label>
+	
+
+	
+		
+			<select name="applied_position" id="id_applied_position">
+  <option value="" selected>---------</option>
+
+  <option value="18">Banking &amp; Finance</option>
+
+  <option value="19">Carpenter</option>
+
+  <option value="20">Cashier</option>
+
+  <option value="21">Electrician</option>
+
+  <option value="22">Engineer</option>
+
+  <option value="23">General Secretory</option>
+
+  <option value="24">Health &amp; Medicine &amp; Nursing</option>
+
+  <option value="25">Heavy Driver</option>
+
+  <option value="26">IT &amp; Internet Engineer</option>
+
+  <option value="27">Leisure &amp; Tourism</option>
+
+  <option value="28">Light Driver</option>
+
+  <option value="29">Mason</option>
+
+  <option value="30">President</option>
+
+  <option value="31">Labour</option>
+
+  <option value="32">Plumber</option>
+
+  <option value="33">Doctor</option>
+
+  <option value="34">Family</option>
+
+  <option value="35">Steel Fixer</option>
+
+  <option value="36">Aluminum Technician</option>
+
+  <option value="37">Nurse</option>
+
+  <option value="38">Male Nurse</option>
+
+  <option value="39">Ward Boy</option>
+
+  <option value="40">Shovel Operator</option>
+
+  <option value="41">Dozer Operator</option>
+
+  <option value="42">Car Mechanic</option>
+
+  <option value="43">Petrol Mechanic</option>
+
+  <option value="44">Diesel Mechanic</option>
+
+  <option value="45">Student</option>
+
+  <option value="46">Accountant</option>
+
+  <option value="47">Lab Technician</option>
+
+  <option value="48">Drafts man</option>
+
+  <option value="49">Auto-Cad Operator</option>
+
+  <option value="50">Painter</option>
+
+  <option value="51">Tailor</option>
+
+  <option value="52">Welder</option>
+
+  <option value="53">X-ray Technician</option>
+
+  <option value="54">Lecturer</option>
+
+  <option value="55">A.C Technician</option>
+
+  <option value="56">Business</option>
+
+  <option value="57">Cleaner</option>
+
+  <option value="58">Security Guard</option>
+
+  <option value="59">House Maid</option>
+
+  <option value="60">Manager</option>
+
+  <option value="61">Hospital Cleaning</option>
+
+  <option value="62">Mechanic</option>
+
+  <option value="63">Computer Operator</option>
+
+  <option value="64">House Driver</option>
+
+  <option value="65">Driver</option>
+
+  <option value="66">Cleaning Labour</option>
+
+  <option value="67">Building Electrician</option>
+
+  <option value="68">Salesman</option>
+
+  <option value="69">Plastermason</option>
+
+  <option value="70">Servant</option>
+
+  <option value="71">Barber</option>
+
+  <option value="72">Residence</option>
+
+  <option value="73">Shepherds</option>
+
+  <option value="74">Employment</option>
+
+  <option value="75">Fuel Filler</option>
+
+  <option value="76">Worker</option>
+
+  <option value="77">House Boy</option>
+
+  <option value="78">House Wife</option>
+
+  <option value="79">RCC Fitter</option>
+
+  <option value="80">Clerk</option>
+
+  <option value="81">Microbiologist</option>
+
+  <option value="82">Teacher</option>
+
+  <option value="83">Helper</option>
+
+  <option value="84">Hajj Duty</option>
+
+  <option value="85">Shuttering</option>
+
+  <option value="86">Supervisor</option>
+
+  <option value="87">Medical Specialist</option>
+
+  <option value="88">Office Secretary</option>
+
+  <option value="89">Technician</option>
+
+  <option value="90">Butcher</option>
+
+  <option value="91">Arabic Food Cook</option>
+
+  <option value="92">Agricultural Worker</option>
+
+  <option value="93">Service</option>
+
+  <option value="94">Studio CAD Designer</option>
+
+  <option value="95">Financial Analyst</option>
+
+  <option value="96">Cabin Appearance (AIR LINES)</option>
+
+  <option value="97">Car Washer</option>
+
+  <option value="98">Surveyor</option>
+
+  <option value="99">Electrical Technician</option>
+
+  <option value="100">Waiter</option>
+
+  <option value="103">Nursing helper</option>
+
+  <option value="104">Anesthesia technician</option>
+
+  <option value="105">&lt;s&gt;Marvel</option>
+
+  <option value="106">Marvel</option>
+
+  <option value="107">Construction worker</option>
+
+  <option value="108">Other</option>
+
+</select>
+		
+	
+	
+	
+		
+	
+</div>
+
+            <div class="field field-other-wrapper">
+                <label>Other</label>
+                <div class="inline fields">
+                    <input disabled type="checkbox" name="applied_position_is_other"
+                        id="id_applied_position_is_other"
+                        >&nbsp;
+                    <input type="text" name="applied_position_other" maxlength="128"
+                        id="id_applied_position_other" value="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <style>
+        .working-hours-modal .modal-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .working-hours-modal .modal-body li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 16px;
+            border-bottom: 1px solid #EDEDED;
+            width: 234px;
+        }
+
+        .working-hours-modal .modal-body li:last-child {
+            border-bottom: none;
+        }
+
+        .working-hours-modal .modal-body li .closed {
+            color: #C36365;
+            font-weight: 700;
+        }
+    </style>
+
+
+<div class="working-hours-modal hidden" data-bs-backdrop="static">
+    <div class="modal-dialog" style="width: 362px; height: 300px;">
+        <div class="modal-content" style="border: 2px solid #fff; background-color: #fff; border-radius: 10px 10px 10px 10px;">
+
+                <i class="close icon" data-bs-dismiss="modal" style="font-size: 2em; position: relative !important; left: 47%;"></i>
+            <div class="modal-body" style="font-weight: 700; margin-left: 60px; margin-top: 10px; padding-bottom: 5%; font-size: larger; height: 300px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .otp-boxes-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    .disabled-link {
+        pointer-events: none;
+        color: grey;
+        text-decoration: none;
+        cursor: default;
+    }
+
+    .otp-box {
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        font-size: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .email-otp-modal {
+        padding: 70px 72px;
+        width: 494px !important;
+        height: 575px;
+    }
+
+    .otp-content-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .countdown-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 30px;
+    }
+
+    .header-text {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .info-text {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .ui.secondary.button.large {
+        background-color: #f5f5f5;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .ui.primary.button.large {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="ui modal email-otp-modal hidden">
+    <div class="ui container text-center">
+        <div class="logo-container">
+            <img src="/static/svg/logo.svg" class="ui centered small image" style="margin-top: 1rem;">
+        </div>
+        <div class="otp-content-container">
+            <h3 class="ui header header-text">OTP Verification</h3>
+            <p class="info-text">
+                Enter the OTP sent to <span class="masked-email" id="otp-masked-email" style="color: #6F1D46;"></span>
+            </p>
+
+            <input type="hidden" name="otp_code" id="otp_code" value="">
+            <div class="otp-boxes-container">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            </div>
+            <div id="otp-error" style="color: red; text-align: center; margin-top: 10px; display: none;">
+                        This field is required
+            </div>
+            <div id="otp-error-otp" style="color: red; text-align: center; margin-top: 10px; display: none;">
+                        Incorrect OTP
+            </div>
+            <div class="countdown-container">
+                <span class="info-text">Time Remaining</span>
+                <div id="countdown" class="countdown-time" style="color: #0d47a1; font-size: 24px;">01:00</div>
+            </div>
+            <div class="resend-otp-container" style="margin-top: 10px;margin-bottom: 10px;">
+                <div class="text-center" id="resend-otp-div" style="display: none;">
+                    Didn't get the code? 
+                    <a id="resend-otp-btn" href="#">
+                           Resend
+                    </a>
+                </div>
+            </div>
+            
+            <div class="otp-hint">
+                <p>
+                    <strong>Hint:</strong> Please check your inbox, and if you didn’t receive it, check your junk or spam folder.
+                </p>
+            </div>
+            <div class="actions">
+                <button class="ui secondary button large" onclick="close_modal()">
+                    Cancel
+                </button>
+                <button class="ui primary button large" id="submit-otp-btn">
+                    Verify
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                            
+                            <div class="field">
+                                <div class="two fields">
+                                    <script src="https://www.google.com/recaptcha/api.js?render=6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp"></script>
+<script type="text/javascript">
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp', {action: 'form'})
+        .then(function(token) {
+            console.log("reCAPTCHA validated for 'data-widget-uuid=\"515d75e25bc948b58ef5ad9997080399\"'. Setting input value...")
+            var element = document.querySelector('.g-recaptcha[data-widget-uuid="515d75e25bc948b58ef5ad9997080399"]');
+            element.value = token;
+        });
+    });
+</script>
+
+<input class="g-recaptcha"
+    type="hidden"
+    name="captcha"
+     required_score="0.1" data-sitekey="6LflPAwnAAAAAL2wBGi6tSyGUyj-xFvftINOR9xp" required id="id_captcha" data-widget-uuid="515d75e25bc948b58ef5ad9997080399" data-callback="onSubmit_515d75e25bc948b58ef5ad9997080399" data-size="normal"
+>
+                                    
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="field ui checkbox agree-checkbox inline reverse">
+                                    <input id="id_confirm" name="confirm" required="" type="checkbox">
+                                    <label>I confirm that the information given in this form is true, complete, and accurate</label>
+                                </div>
+                                <div class="field">
+                                    <div class="two fields">
+                                        
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                        </div>
+                        <div class="form-buttons-container">
+                            <div class="ui centered grid">
+                                <div class="seven wide mobile nine wide computer seven wide tablet column mobile hidden"></div>
+                                <div class="nine wide mobile seven wide computer nine wide tablet column">
+                                    <div class="ui stackable two column grid mobile reversed">
+                                        <div class="eight wide column">
+                                            <button class="ui secondary large basic fluid button cancel-btn">Cancel</button>
+                                        </div>
+                                        <div class="eight wide column">
+                                            <button class="ui primary large submit fluid button small-side-paddings"
+                                                    type="submit">Save and continue
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Confirmation Modal -->
+
+
+<div class="cancel-appointment-confirm-modal hidden" data-bs-backdrop="static">
+    <div class="modal-dialog" style="width: 70vh; height: 50vh;">
+        <div class="modal-content" style="border: 2px solid #fff; background-color: #fff; border-radius: 10px 10px 10px 10px;">
+
+                <i class="close icon" data-bs-dismiss="modal" style="font-size: 2em; position: relative !important; left: 47%;"></i>
+            <div class="modal-header">
+                <h2 class="ui header" style="padding-bottom: 5%; font-size: larger;">
+                    <div class="content md-header">Cancel Appointment</div>
+                </h2>
+            </div>
+            <div class="cancel-modal-body" style="padding-bottom: 5%; font-size: larger;">
+                All entries inserted will not be saved, are you sure?
+            </div>
+            <div class="modal-footer"
+                 style="display: flex; justify-content: space-between; background-color: #fff; border-top: 2px solid #fff; padding: 10px;">
+                <a type="button" class="ui secondary small  fluid button" data-bs-dismiss="modal">Cancel</a>
+                <button type="button" class="ui primary small submit fluid button small-side-paddings"
+                        onclick="cancelAppointment()">Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </main>
+
+
+
+    <div class="ui vertical basic segment footer">
+    <div class="ui container center aligned">
+    <div class="ui container center aligned">
+        <img class="footer-logo" src="/static/svg/gcc-old-logo-white.svg" alt="gulf health council logo">
+        <div class="social-media-icons">
+            <a href="https://www.instagram.com/ghc_gcc/channel/?hl=en"><img class="social-media-icons-colors"
+                                                                            src="/static/svg/instagram.svg"
+                                                                            alt="instagram"></a>
+            <a href=" https://ar-ar.facebook.com/GHCouncil/"><img class="social-media-icons-colors"
+                                                                  src="/static/svg/facebook.svg" alt="facebook"></a>
+            <a href="https://twitter.com/ghc_gcc"><img class="social-media-icons-colors"
+                                                       src="/static/svg/twitter.svg" alt="twitter"></a>
+            <a href="https://www.youtube.com/channel/UCrKbHYpmpC_OrAfZ5P_qZXA"><img class="social-media-icons-colors"
+                                                                                    src="/static/svg/youtube.svg"
+                                                                                    alt="youtube"></a>
+        </div>
+        <div class="copyright">
+            <div class="copyright">
+                <span>@ 2025 </span>
+                Gulf Health Council. All rights reserved
+            </div>
+            
+        </div>
+    </div>
+
+
+    
+
+<script src="/static/jsi18n/en/djangojs.js"></script>
+
+    <script src="/static/vendor/jquery.min.js"></script>
+    <script src="/static/vendor/semantic/dist/semantic.min.js"></script>
+    <script src="/static/js/vendor/jquery.inputmask.min.js"></script>
+    <script src="/static/js/vendor/cropper.min.js"></script>
+    <script src="/static/js/vendor/jquery-cropper.min.js"></script>
+    <script src="/static/js/vendor/glide.min.js"></script>
+    <script src="/static/js/vendor/js.cookie.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/table-config.js"></script>
+    <script src="/static/js/purify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.dropdown').dropdown();
+            $('.ui.dropdown.item').dropdown({on: 'hover'});
+            $('.ui.checkbox').checkbox();
+            $('.message .close')
+                .on('click', function () {
+                    $(this)
+                        .closest('.message')
+                        .transition('fade');
+                });
+        });
+    </script>
+
+    <!-- start forms and widgets-specific -->
+    <script src="/static/vendor/semantic-ui-calendar/calendar.min.js"></script>
+    <script src="/static/vendor/semantic/dist/components/dropdown.js"></script>
+    <script src="/static/vendor/state-machine/state-machine.min.js"></script>
+    <script src="/static/js/calendar-widget.js"></script>
+    <script src="/static/js/vendor/moment.js"></script>
+    <script src="/static/js/components/single-dropdown-widget.js"></script>
+    <script src="/static/js/components/multiple-dropdown-widget.js"></script>
+    <script src="/static/js/captcha.js"></script>
+    <script src="/static/js/components/file-widget.js"></script>
+    <script src="/static/js/components/number-input-widget.js"></script>
+    <script src="/static/js/components/labeled-select-widget.js"></script>
+    <script src="/static/js/city-country-controls.js"></script>
+
+    <!-- end forms and widgets-specific -->
+
+
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js" crossorigin="" defer></script>
+    <script>
+        // country -> city map
+        CITIES = JSON.parse('{\u0022AF\u0022: [[2048, \u0022Kabul\u0022, \u0022AF\u0022]], \u0022DZ\u0022: [[2036, \u0022Algiers\u0022, \u0022DZ\u0022]], \u0022AO\u0022: [[2063, \u0022LUANDA\u0022, \u0022AO\u0022]], \u0022BH\u0022: [[110, \u0022manama\u0022, \u0022BH\u0022]], \u0022BD\u0022: [[2031, \u0022Barishal\u0022, \u0022BD\u0022], [2061, \u0022Chandpur\u0022, \u0022BD\u0022], [81, \u0022Chitagong\u0022, \u0022BD\u0022], [2033, \u0022Cox\u0027s Bazar\u0022, \u0022BD\u0022], [2032, \u0022Cumilla\u0022, \u0022BD\u0022], [80, \u0022Dhaka\u0022, \u0022BD\u0022], [2030, \u0022Rajshahi\u0022, \u0022BD\u0022], [2059, \u0022Sherpur\u0022, \u0022BD\u0022], [83, \u0022Sylhet\u0022, \u0022BD\u0022]], \u0022BN\u0022: [[2084, \u0022Bandar Seri Begawan\u0022, \u0022BN\u0022]], \u0022BRF\u0022: [[157, \u0022Ouagadougou\u0022, \u0022BRF\u0022]], \u0022BR\u0022: [[155, \u0022Bujumbura\u0022, \u0022BR\u0022], [2037, \u0022Gitega\u0022, \u0022BR\u0022], [2053, \u0022Makamba\u0022, \u0022BR\u0022]], \u0022KH\u0022: [[2085, \u0022Phnom Penh\u0022, \u0022KH\u0022]], \u0022CM\u0022: [[2047, \u0022Yaounde\u0022, \u0022CM\u0022]], \u0022TD\u0022: [[2038, \u0022N\u0027Djamena\u0022, \u0022TD\u0022]], \u0022CHI\u0022: [[151, \u0022Beijing\u0022, \u0022CHI\u0022], [2082, \u0022Taiwan\u0022, \u0022CHI\u0022]], \u0022EGY\u0022: [[120, \u0022Alexandria\u0022, \u0022EGY\u0022], [2080, \u0022Asyut\u0022, \u0022EGY\u0022], [87, \u0022Cairo\u0022, \u0022EGY\u0022], [2081, \u0022Sohag\u0022, \u0022EGY\u0022]], \u0022ER\u0022: [[160, \u0022Asmara\u0022, \u0022ER\u0022]], \u0022ETH\u0022: [[2071, \u0022Adama\u0022, \u0022ETH\u0022], [121, \u0022Addis Ababa\u0022, \u0022ETH\u0022], [2068, \u0022Jimma\u0022, \u0022ETH\u0022]], \u0022GM\u0022: [[2070, \u0022Banjul\u0022, \u0022GM\u0022]], \u0022GN\u0022: [[141, \u0022Accra\u0022, \u0022GN\u0022]], \u0022GU\u0022: [[166, \u0022Conakry\u0022, \u0022GU\u0022]], \u0022ACT\u0022: [[60, \u0022Ahmedabad\u0022, \u0022ACT\u0022], [61, \u0022Bengaluru\u0022, \u0022ACT\u0022], [93, \u0022Calicut\u0022, \u0022ACT\u0022], [2073, \u0022Chandigarh\u0022, \u0022ACT\u0022], [64, \u0022Chennai\u0022, \u0022ACT\u0022], [2019, \u0022Coimbatore\u0022, \u0022ACT\u0022], [66, \u0022Delhi\u0022, \u0022ACT\u0022], [137, \u0022Demow\u0022, \u0022ACT\u0022], [132, \u0022Goa\u0022, \u0022ACT\u0022], [2015, \u0022Gorakhpur\u0022, \u0022ACT\u0022], [134, \u0022Hubballi\u0022, \u0022ACT\u0022], [67, \u0022Hyderabad\u0022, \u0022ACT\u0022], [2026, \u0022Indore\u0022, \u0022ACT\u0022], [68, \u0022Jaipur\u0022, \u0022ACT\u0022], [2078, \u0022Jharkhand\u0022, \u0022ACT\u0022], [2060, \u0022Kadapa\u0022, \u0022ACT\u0022], [117, \u0022Kochi\u0022, \u0022ACT\u0022], [2065, \u0022Kodungallur\u0022, \u0022ACT\u0022], [133, \u0022Kolkata\u0022, \u0022ACT\u0022], [2020, \u0022Kutch\u0022, \u0022ACT\u0022], [62, \u0022Lucknow\u0022, \u0022ACT\u0022], [2027, \u0022Madurai\u0022, \u0022ACT\u0022], [99, \u0022Malappuram\u0022, \u0022ACT\u0022], [59, \u0022Mangalore\u0022, \u0022ACT\u0022], [97, \u0022Manjeri\u0022, \u0022ACT\u0022], [107, \u0022Margao\u0022, \u0022ACT\u0022], [63, \u0022Mumbai\u0022, \u0022ACT\u0022], [1002, \u0022New Delhi\u0022, \u0022ACT\u0022], [2076, \u0022Noida\u0022, \u0022ACT\u0022], [108, \u0022Panaji\u0022, \u0022ACT\u0022], [2021, \u0022Patna\u0022, \u0022ACT\u0022], [2077, \u0022Prayagraj\u0022, \u0022ACT\u0022], [2075, \u0022Pune\u0022, \u0022ACT\u0022], [2017, \u0022Punjab\u0022, \u0022ACT\u0022], [2062, \u0022Silchar\u0022, \u0022ACT\u0022], [2074, \u0022Srinagar\u0022, \u0022ACT\u0022], [72, \u0022Thalakkadathur\u0022, \u0022ACT\u0022], [70, \u0022Tiruchirappalli\u0022, \u0022ACT\u0022], [101, \u0022Tirur\u0022, \u0022ACT\u0022], [69, \u0022Triuvananthapuram\u0022, \u0022ACT\u0022], [2064, \u0022Vijayawada\u0022, \u0022ACT\u0022], [2028, \u0022Visakhapatnam\u0022, \u0022ACT\u0022]], \u0022IDN\u0022: [[86, \u0022Jakarta Selatan\u0022, \u0022IDN\u0022], [98, \u0022Malang\u0022, \u0022IDN\u0022], [131, \u0022Mataram\u0022, \u0022IDN\u0022], [95, \u0022Surabaya\u0022, \u0022IDN\u0022]], \u0022IRQ\u0022: [[2050, \u0022Baghdad\u0022, \u0022IRQ\u0022]], \u0022IVC\u0022: [[158, \u0022Yamoussoukro\u0022, \u0022IVC\u0022]], \u0022JR\u0022: [[148, \u0022Amman\u0022, \u0022JR\u0022], [2051, \u0022Irbid\u0022, \u0022JR\u0022]], \u0022KN\u0022: [[2044, \u0022Eldoret\u0022, \u0022KN\u0022], [2045, \u0022Kakamega\u0022, \u0022KN\u0022], [2042, \u0022Kisumu\u0022, \u0022KN\u0022], [2046, \u0022Machakos\u0022, \u0022KN\u0022], [2041, \u0022Mombasa\u0022, \u0022KN\u0022], [140, \u0022Nairobi\u0022, \u0022KN\u0022], [2043, \u0022Nakuru\u0022, \u0022KN\u0022]], \u0022KW\u0022: [[111, \u0022Kuwait\u0022, \u0022KW\u0022]], \u0022LB\u0022: [[149, \u0022Beirut\u0022, \u0022LB\u0022]], \u0022MDG\u0022: [[146, \u0022Antananarivo\u0022, \u0022MDG\u0022]], \u0022MI\u0022: [[163, \u0022Bamako\u0022, \u0022MI\u0022]], \u0022MA\u0022: [[2039, \u0022Nouakchott\u0022, \u0022MA\u0022]], \u0022MR\u0022: [[152, \u0022Casablanca\u0022, \u0022MR\u0022], [153, \u0022Marrakech\u0022, \u0022MR\u0022], [147, \u0022Rabat\u0022, \u0022MR\u0022], [154, \u0022Tangier\u0022, \u0022MR\u0022]], \u0022NEP\u0022: [[89, \u0022Kathmandu\u0022, \u0022NEP\u0022], [82, \u0022Tripureshwor\u0022, \u0022NEP\u0022]], \u0022NG\u0022: [[164, \u0022Niamey\u0022, \u0022NG\u0022]], \u0022NIG\u0022: [[156, \u0022Abuja\u0022, \u0022NIG\u0022], [2086, \u0022Kano\u0022, \u0022NIG\u0022], [2054, \u0022Lagos state\u0022, \u0022NIG\u0022]], \u0022OM\u0022: [[112, \u0022Muscat\u0022, \u0022OM\u0022], [2052, \u0022SHOUQ\u0022, \u0022OM\u0022]], \u0022PAK\u0022: [[2066, \u0022Bahawalpur\u0022, \u0022PAK\u0022], [2069, \u0022Chakdara\u0022, \u0022PAK\u0022], [2072, \u0022Faisalabad\u0022, \u0022PAK\u0022], [91, \u0022Gujranwala\u0022, \u0022PAK\u0022], [2055, \u0022Gwadar\u0022, \u0022PAK\u0022], [73, \u0022Islamabad\u0022, \u0022PAK\u0022], [74, \u0022Karachi\u0022, \u0022PAK\u0022], [2058, \u0022Khuzdar\u0022, \u0022PAK\u0022], [75, \u0022Lahore\u0022, \u0022PAK\u0022], [76, \u0022Multan\u0022, \u0022PAK\u0022], [2057, \u0022Panjgur\u0022, \u0022PAK\u0022], [77, \u0022Peshawar\u0022, \u0022PAK\u0022], [92, \u0022Quetta\u0022, \u0022PAK\u0022], [90, \u0022Rawalpindi\u0022, \u0022PAK\u0022], [2079, \u0022Sahiwal\u0022, \u0022PAK\u0022], [2025, \u0022Sialkot\u0022, \u0022PAK\u0022], [2056, \u0022Turbat\u0022, \u0022PAK\u0022]], \u0022PHL\u0022: [[104, \u0022Bacolod\u0022, \u0022PHL\u0022], [79, \u0022Cebu\u0022, \u0022PHL\u0022], [105, \u0022Davao\u0022, \u0022PHL\u0022], [144, \u0022Iloilo\u0022, \u0022PHL\u0022], [100, \u0022Makati\u0022, \u0022PHL\u0022], [102, \u0022Mandaluyong\u0022, \u0022PHL\u0022], [143, \u0022Mandaue\u0022, \u0022PHL\u0022], [78, \u0022Manila\u0022, \u0022PHL\u0022], [150, \u0022Mindanao\u0022, \u0022PHL\u0022], [103, \u0022Quezon\u0022, \u0022PHL\u0022], [142, \u0022Zamboanga\u0022, \u0022PHL\u0022]], \u0022QA\u0022: [[113, \u0022Doha\u0022, \u0022QA\u0022]], \u0022SA\u0022: [[6, \u0022Riyadh\u0022, \u0022SA\u0022]], \u0022SN\u0022: [[2087, \u0022Dakar\u0022, \u0022SN\u0022]], \u0022SL\u0022: [[165, \u0022Freetown\u0022, \u0022SL\u0022]], \u0022so\u0022: [[2040, \u0022Mogadishu\u0022, \u0022so\u0022]], \u0022ZA\u0022: [[2035, \u0022Pretoria\u0022, \u0022ZA\u0022]], \u0022Sri\u0022: [[94, \u0022\u002D\u002D\u002D\u0022, \u0022Sri\u0022], [2018, \u0022Ampara\u0022, \u0022Sri\u0022], [2023, \u0022Anuradhapura\u0022, \u0022Sri\u0022], [96, \u0022Batticaloa\u0022, \u0022Sri\u0022], [84, \u0022Colombo\u0022, \u0022Sri\u0022], [2024, \u0022Kandy\u0022, \u0022Sri\u0022], [85, \u0022Kurunegala\u0022, \u0022Sri\u0022]], \u0022SUD\u0022: [[109, \u0022Khartoum\u0022, \u0022SUD\u0022]], \u0022SYR\u0022: [[119, \u0022Aleppo\u0022, \u0022SYR\u0022], [118, \u0022Damascus\u0022, \u0022SYR\u0022]], \u0022TNZ\u0022: [[168, \u0022Dar es Salaam\u0022, \u0022TNZ\u0022]], \u0022THI\u0022: [[162, \u0022Bangkok\u0022, \u0022THI\u0022]], \u0022TUN\u0022: [[161, \u0022Tunis\u0022, \u0022TUN\u0022]], \u0022TUR\u0022: [[167, \u0022Ankara\u0022, \u0022TUR\u0022], [2012, \u0022Antakya\u0022, \u0022TUR\u0022], [2013, \u0022Diyarbakir\u0022, \u0022TUR\u0022], [2011, \u0022Gaziantep\u0022, \u0022TUR\u0022], [169, \u0022Istanbul\u0022, \u0022TUR\u0022], [2014, \u0022Izmir\u0022, \u0022TUR\u0022]], \u0022UAE\u0022: [[115, \u0022Abu Dhabi\u0022, \u0022UAE\u0022]], \u0022UG\u0022: [[145, \u0022Kampala\u0022, \u0022UG\u0022]], \u0022UZ\u0022: [[2083, \u0022Tashkent\u0022, \u0022UZ\u0022]], \u0022VT\u0022: [[159, \u0022Hanoi\u0022, \u0022VT\u0022], [2034, \u0022Ho Chi Minh\u0022, \u0022VT\u0022]], \u0022YEM\u0022: [[2049, \u0022Sanaa\u0022, \u0022YEM\u0022]]}');
+        // country -> nationality map
+        NATIONALITIES = JSON.parse("{\u0022AF\u0022: [[1049, \u0022Afghan\u0022, \u0022AF\u0022]], \u0022AL\u0022: [[2, \u0022Albanian\u0022, \u0022AL\u0022]], \u0022DZ\u0022: [[3, \u0022Algerian\u0022, \u0022DZ\u0022]], \u0022AO\u0022: [[1070, \u0022Angolan\u0022, \u0022AO\u0022]], \u0022AR\u0022: [[8, \u0022Argentinian\u0022, \u0022AR\u0022]], \u0022AM\u0022: [[9, \u0022Armenian\u0022, \u0022AM\u0022]], \u0022AU\u0022: [[10, \u0022Australian\u0022, \u0022AU\u0022]], \u0022AT\u0022: [[11, \u0022Austrian\u0022, \u0022AT\u0022]], \u0022AZ\u0022: [[12, \u0022Azerbaijani\u0022, \u0022AZ\u0022]], \u0022BH\u0022: [[14, \u0022Bahraini\u0022, \u0022BH\u0022]], \u0022BD\u0022: [[15, \u0022Bangladeshi\u0022, \u0022BD\u0022]], \u0022by\u0022: [[19, \u0022Belarusian\u0022, \u0022by\u0022]], \u0022BE\u0022: [[20, \u0022Belgian\u0022, \u0022BE\u0022]], \u0022BZ\u0022: [[21, \u0022Belizean\u0022, \u0022BZ\u0022]], \u0022BT\u0022: [[23, \u0022Bhutanese\u0022, \u0022BT\u0022]], \u0022BA\u0022: [[25, \u0022Bosnian\u0022, \u0022BA\u0022]], \u0022BRA\u0022: [[26, \u0022Brazilian\u0022, \u0022BRA\u0022]], \u0022BGR\u0022: [[1077, \u0022Bulgarian\u0022, \u0022BGR\u0022]], \u0022BRF\u0022: [[30, \u0022Burkinabe\u0022, \u0022BRF\u0022]], \u0022BR\u0022: [[32, \u0022Burundian\u0022, \u0022BR\u0022]], \u0022KH\u0022: [[33, \u0022Cambodian\u0022, \u0022KH\u0022]], \u0022CM\u0022: [[34, \u0022Cameroonian\u0022, \u0022CM\u0022]], \u0022ca\u0022: [[35, \u0022Canadian\u0022, \u0022ca\u0022]], \u0022TD\u0022: [[38, \u0022Chadian\u0022, \u0022TD\u0022]], \u0022CHI\u0022: [[40, \u0022Chinese\u0022, \u0022CHI\u0022], [161, \u0022Taiwanese\u0022, \u0022CHI\u0022]], \u0022CO\u0022: [[41, \u0022Colombian\u0022, \u0022CO\u0022]], \u0022CU\u0022: [[1072, \u0022Cuban\u0022, \u0022CU\u0022]], \u0022CY\u0022: [[47, \u0022Cypriot\u0022, \u0022CY\u0022]], \u0022CZ\u0022: [[48, \u0022Czech\u0022, \u0022CZ\u0022]], \u0022DK\u0022: [[49, \u0022Danish\u0022, \u0022DK\u0022]], \u0022DJ\u0022: [[50, \u0022Djibouti\u0022, \u0022DJ\u0022]], \u0022DM\u0022: [[1050, \u0022Dominica\u0022, \u0022DM\u0022]], \u0022EC\u0022: [[54, \u0022Ecuadorean\u0022, \u0022EC\u0022]], \u0022EGY\u0022: [[55, \u0022Egyptian\u0022, \u0022EGY\u0022]], \u0022ER\u0022: [[58, \u0022Eritrean\u0022, \u0022ER\u0022]], \u0022ETH\u0022: [[60, \u0022Ethiopian\u0022, \u0022ETH\u0022]], \u0022FI\u0022: [[63, \u0022Finnish\u0022, \u0022FI\u0022]], \u0022FR\u0022: [[64, \u0022French\u0022, \u0022FR\u0022]], \u0022de\u0022: [[68, \u0022German\u0022, \u0022de\u0022]], \u0022GN\u0022: [[69, \u0022Ghanaian\u0022, \u0022GN\u0022]], \u0022GR\u0022: [[70, \u0022Greek\u0022, \u0022GR\u0022]], \u0022GT\u0022: [[1076, \u0022Guatemalan\u0022, \u0022GT\u0022]], \u0022GU\u0022: [[74, \u0022GuineanGuyanese\u0022, \u0022GU\u0022]], \u0022GW\u0022: [[1067, \u0022Guineense\u0022, \u0022GW\u0022]], \u0022ACT\u0022: [[1, \u0022Indian\u0022, \u0022ACT\u0022]], \u0022IDN\u0022: [[81, \u0022Indonesian\u0022, \u0022IDN\u0022]], \u0022ir\u0022: [[82, \u0022Iranian\u0022, \u0022ir\u0022]], \u0022IRQ\u0022: [[83, \u0022Iraqi\u0022, \u0022IRQ\u0022]], \u0022IE\u0022: [[84, \u0022Irish\u0022, \u0022IE\u0022]], \u0022IT\u0022: [[86, \u0022Italian\u0022, \u0022IT\u0022]], \u0022IVC\u0022: [[87, \u0022Ivorian\u0022, \u0022IVC\u0022]], \u0022JAM\u0022: [[88, \u0022Jamaican\u0022, \u0022JAM\u0022]], \u0022JPN\u0022: [[89, \u0022Japanese\u0022, \u0022JPN\u0022]], \u0022JR\u0022: [[90, \u0022Jordanian\u0022, \u0022JR\u0022]], \u0022KZ\u0022: [[91, \u0022Kazakhstani\u0022, \u0022KZ\u0022]], \u0022KN\u0022: [[92, \u0022Kenyan\u0022, \u0022KN\u0022]], \u0022KW\u0022: [[94, \u0022Kuwaiti\u0022, \u0022KW\u0022]], \u0022KG\u0022: [[1080, \u0022Kyrgyzstani\u0022, \u0022KG\u0022]], \u0022LA\u0022: [[96, \u0022Laotian\u0022, \u0022LA\u0022]], \u0022LB\u0022: [[98, \u0022Lebanese\u0022, \u0022LB\u0022]], \u0022LY\u0022: [[100, \u0022Libyan\u0022, \u0022LY\u0022]], \u0022LT\u0022: [[102, \u0022Lithuanian\u0022, \u0022LT\u0022]], \u0022MDG\u0022: [[105, \u0022Malagasy\u0022, \u0022MDG\u0022]], \u0022MW\u0022: [[1069, \u0022Malawian\u0022, \u0022MW\u0022]], \u0022MV\u0022: [[108, \u0022Maldivian\u0022, \u0022MV\u0022]], \u0022MI\u0022: [[109, \u0022Malian\u0022, \u0022MI\u0022]], \u0022MT\u0022: [[110, \u0022Maltese\u0022, \u0022MT\u0022]], \u0022MA\u0022: [[112, \u0022Mauritanian\u0022, \u0022MA\u0022]], \u0022MX\u0022: [[114, \u0022Mexican\u0022, \u0022MX\u0022]], \u0022ME\u0022: [[1066, \u0022Montenegrin\u0022, \u0022ME\u0022]], \u0022MR\u0022: [[119, \u0022Moroccan\u0022, \u0022MR\u0022]], \u0022MM\u0022: [[1068, \u0022Myanmar\u0022, \u0022MM\u0022]], \u0022NEP\u0022: [[125, \u0022Nepalese\u0022, \u0022NEP\u0022]], \u0022NL\u0022: [[52, \u0022Dutch\u0022, \u0022NL\u0022]], \u0022NZ\u0022: [[127, \u0022New Zealander\u0022, \u0022NZ\u0022]], \u0022NG\u0022: [[1073, \u0022Nigerien\u0022, \u0022NG\u0022]], \u0022NIG\u0022: [[130, \u0022Nigerian\u0022, \u0022NIG\u0022]], \u0022OM\u0022: [[134, \u0022Omani\u0022, \u0022OM\u0022]], \u0022PAK\u0022: [[135, \u0022Pakistani\u0022, \u0022PAK\u0022]], \u0022PS\u0022: [[1007, \u0022Palestine\u0022, \u0022PS\u0022]], \u0022PA\u0022: [[137, \u0022Panamanian\u0022, \u0022PA\u0022]], \u0022PER\u0022: [[141, \u0022Peruvian\u0022, \u0022PER\u0022]], \u0022PHL\u0022: [[177, \u0022Filipino\u0022, \u0022PHL\u0022]], \u0022123\u0022: [[142, \u0022Polish\u0022, \u0022123\u0022]], \u0022PT\u0022: [[1064, \u0022Portuguese\u0022, \u0022PT\u0022]], \u0022QA\u0022: [[144, \u0022Qatari\u0022, \u0022QA\u0022]], \u0022RO\u0022: [[145, \u0022Romanian\u0022, \u0022RO\u0022]], \u0022RU\u0022: [[146, \u0022Russian\u0022, \u0022RU\u0022]], \u0022RW\u0022: [[1071, \u0022Rwandan\u0022, \u0022RW\u0022]], \u0022SKN\u0022: [[1060, \u0022Saint Kitts and Nevis\u0022, \u0022SKN\u0022]], \u0022SA\u0022: [[1012, \u0022Algeria\u0022, \u0022SA\u0022], [1015, \u0022Malaysia\u0022, \u0022SA\u0022], [133, \u0022Norwegian\u0022, \u0022SA\u0022], [148, \u0022Saudi\u0022, \u0022SA\u0022], [1011, \u0022South Africa\u0022, \u0022SA\u0022]], \u0022SN\u0022: [[1074, \u0022Senegalese\u0022, \u0022SN\u0022]], \u0022RS\u0022: [[150, \u0022Serbian\u0022, \u0022RS\u0022]], \u0022SL\u0022: [[1053, \u0022Sierra Leonean\u0022, \u0022SL\u0022], [1062, \u0022Sierra Leonean\u0022, \u0022SL\u0022]], \u0022SG\u0022: [[1081, \u0022singapore\u0022, \u0022SG\u0022]], \u0022SK\u0022: [[1079, \u0022Slovakian\u0022, \u0022SK\u0022]], \u0022SI\u0022: [[1078, \u0022Slovenian\u0022, \u0022SI\u0022]], \u0022so\u0022: [[152, \u0022Somali\u0022, \u0022so\u0022]], \u0022KR\u0022: [[154, \u0022South Korean\u0022, \u0022KR\u0022]], \u0022Sri\u0022: [[156, \u0022Sri Lankan\u0022, \u0022Sri\u0022]], \u0022SUD\u0022: [[157, \u0022Sudanese\u0022, \u0022SUD\u0022]], \u0022SE\u0022: [[189, \u0022Swedish\u0022, \u0022SE\u0022]], \u0022ch\u0022: [[159, \u0022Swiss\u0022, \u0022ch\u0022]], \u0022SYR\u0022: [[160, \u0022Syrian\u0022, \u0022SYR\u0022]], \u0022TJ\u0022: [[162, \u0022Tajik\u0022, \u0022TJ\u0022]], \u0022TNZ\u0022: [[163, \u0022Tanzanian\u0022, \u0022TNZ\u0022]], \u0022THI\u0022: [[164, \u0022Thai\u0022, \u0022THI\u0022]], \u0022TG\u0022: [[195, \u0022Togolese\u0022, \u0022TG\u0022]], \u0022TUN\u0022: [[194, \u0022Tunisian\u0022, \u0022TUN\u0022]], \u0022TUR\u0022: [[165, \u0022Turkish\u0022, \u0022TUR\u0022]], \u0022TM\u0022: [[1063, \u0022Turkmen\u0022, \u0022TM\u0022]], \u0022UG\u0022: [[166, \u0022Ugandan\u0022, \u0022UG\u0022]], \u0022UA\u0022: [[167, \u0022Ukrainian\u0022, \u0022UA\u0022]], \u0022GB\u0022: [[1014, \u0022Britain\u0022, \u0022GB\u0022]], \u0022US\u0022: [[1013, \u0022United states of America\u0022, \u0022US\u0022]], \u0022UZ\u0022: [[169, \u0022Uzbekistani\u0022, \u0022UZ\u0022]], \u0022VU\u0022: [[185, \u0022Vanuatu\u0022, \u0022VU\u0022]], \u0022VEN\u0022: [[170, \u0022Venezuelan\u0022, \u0022VEN\u0022]], \u0022VT\u0022: [[171, \u0022Vietnamese\u0022, \u0022VT\u0022]], \u0022YEM\u0022: [[172, \u0022YEMENI\u0022, \u0022YEM\u0022]]}");
+        // city -> medical center
+        CITY_MEDICAL_CENTERS = JSON.parse("{\u0022165\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 165, \u0022YEM\u0022]], \u0022162\u0022: [[6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022BH\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022KW\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022OM\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022QA\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022UAE\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, 162, \u0022YEM\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022BH\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022KW\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022OM\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022QA\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022UAE\u0022], [743, \u0022Piyavate  Hospital\u0022, 162, \u0022YEM\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022BH\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022KW\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022OM\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022QA\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022SA\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022UAE\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, 162, \u0022YEM\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022BH\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022KW\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022OM\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022QA\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022SA\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022UAE\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, 162, \u0022YEM\u0022]], \u002298\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 98, \u0022YEM\u0022]], \u0022118\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 118, \u0022YEM\u0022]], \u0022119\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 119, \u0022YEM\u0022]], \u00222011\u0022: [[1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022BH\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022KW\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022OM\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022QA\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022SA\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022UAE\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, 2011, \u0022YEM\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022BH\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022KW\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022OM\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022QA\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022SA\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022UAE\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, 2011, \u0022YEM\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022BH\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022KW\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022OM\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022QA\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022SA\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022UAE\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, 2011, \u0022YEM\u0022]], \u00222012\u0022: [[1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022BH\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022KW\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022OM\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022QA\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022SA\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022UAE\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, 2012, \u0022YEM\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022BH\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022KW\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022OM\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022QA\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022SA\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022UAE\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, 2012, \u0022YEM\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022BH\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022KW\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022OM\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022QA\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022SA\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022UAE\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, 2012, \u0022YEM\u0022]], \u0022131\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 131, \u0022YEM\u0022]], \u00222014\u0022: [[1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022BH\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022KW\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022OM\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022QA\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022SA\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022UAE\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, 2014, \u0022YEM\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022BH\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022KW\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022OM\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022QA\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022SA\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022UAE\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, 2014, \u0022YEM\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022BH\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022KW\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022OM\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022QA\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022SA\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022UAE\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, 2014, \u0022YEM\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022BH\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022KW\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022OM\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022QA\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022SA\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022UAE\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, 2014, \u0022YEM\u0022]], \u00222036\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2036, \u0022YEM\u0022]], \u0022149\u0022: [[737, \u0022Doctors Center Laboratory\u0022, 149, \u0022BH\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022KW\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022OM\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022QA\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022SA\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022UAE\u0022], [737, \u0022Doctors Center Laboratory\u0022, 149, \u0022YEM\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022BH\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022KW\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022OM\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022QA\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022SA\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022UAE\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022AE\u0022], [738, \u0022Beirut General Hospital\u0022, 149, \u0022YEM\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022BH\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022KW\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022OM\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022QA\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022SA\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022UAE\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022AE\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, 149, \u0022YEM\u0022]], \u0022152\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 152, \u0022YEM\u0022]], \u0022154\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 154, \u0022YEM\u0022]], \u0022169\u0022: [[781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022BH\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022KW\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022OM\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022QA\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022SA\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022UAE\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, 169, \u0022YEM\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022BH\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022KW\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022OM\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022QA\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022SA\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022UAE\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, 169, \u0022YEM\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022BH\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022KW\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022OM\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022QA\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022SA\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022UAE\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, 169, \u0022YEM\u0022]], \u00222054\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2054, \u0022SA\u0022]], \u002295\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 95, \u0022YEM\u0022]], \u002283\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 83, \u0022AE\u0022]], \u002286\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 86, \u0022YEM\u0022]], \u0022104\u0022: [[640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022BH\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022KW\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022OM\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022QA\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022SA\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022UAE\u0022], [640, \u0022Watanak Diagnostic Center\u0022, 104, \u0022YEM\u0022]], \u0022168\u0022: [[741, \u0022Sali Hospital\u0022, 168, \u0022BH\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022KW\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022OM\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022QA\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022SA\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022UAE\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022AE\u0022], [741, \u0022Sali Hospital\u0022, 168, \u0022YEM\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022BH\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022KW\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022OM\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022QA\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022SA\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022UAE\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022AE\u0022], [740, \u0022London Health Centre\u0022, 168, \u0022YEM\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022BH\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022KW\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022OM\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022QA\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022SA\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022UAE\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022AE\u0022], [739, \u0022Agakhan Hospital\u0022, 168, \u0022YEM\u0022]], \u0022153\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 153, \u0022YEM\u0022]], \u00222031\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2031, \u0022YEM\u0022]], \u00222032\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2032, \u0022SA\u0022]], \u00222020\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2020, \u0022YEM\u0022]], \u0022105\u0022: [[318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022BH\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022KW\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022OM\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022QA\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022SA\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022UAE\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022AE\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, 105, \u0022YEM\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022BH\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022KW\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022OM\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022QA\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022SA\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022UAE\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022AE\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, 105, \u0022YEM\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022BH\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022KW\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022OM\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022QA\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022SA\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022UAE\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022AE\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, 105, \u0022YEM\u0022]], \u0022167\u0022: [[777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022BH\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022KW\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022OM\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022QA\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022SA\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022UAE\u0022], [777, \u0022Memorial Ankara Hospital\u0022, 167, \u0022YEM\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022BH\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022KW\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022OM\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022QA\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022SA\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022UAE\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, 167, \u0022YEM\u0022]], \u0022161\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 161, \u0022YEM\u0022]], \u0022141\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 141, \u0022YEM\u0022]], \u002278\u0022: [[300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022BH\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022KW\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022OM\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022QA\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022SA\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022UAE\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022AE\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, 78, \u0022YEM\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022BH\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022KW\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022OM\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022QA\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022SA\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022UAE\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022AE\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, 78, \u0022YEM\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022BH\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022KW\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022OM\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022QA\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022SA\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022UAE\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, 78, \u0022YEM\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022BH\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022KW\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022OM\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022QA\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022SA\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022UAE\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022AE\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, 78, \u0022YEM\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022BH\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022KW\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022OM\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022QA\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022SA\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022UAE\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022AE\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, 78, \u0022YEM\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022BH\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022KW\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022OM\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022QA\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022SA\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022UAE\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022AE\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, 78, \u0022YEM\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022BH\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022KW\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022OM\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022QA\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022SA\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022UAE\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022AE\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, 78, \u0022YEM\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022BH\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022KW\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022OM\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022QA\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022SA\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022UAE\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022AE\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, 78, \u0022YEM\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022BH\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022KW\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022OM\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022QA\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022SA\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022UAE\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022AE\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, 78, \u0022YEM\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022BH\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022KW\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022OM\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022QA\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022SA\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022UAE\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, 78, \u0022YEM\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022BH\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022KW\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022OM\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022QA\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022SA\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022UAE\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022AE\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, 78, \u0022YEM\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022BH\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022KW\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022OM\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022QA\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022SA\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022UAE\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, 78, \u0022YEM\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022BH\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022KW\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022OM\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022QA\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022SA\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022UAE\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022AE\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, 78, \u0022YEM\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022BH\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022KW\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022OM\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022QA\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022SA\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022UAE\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022AE\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, 78, \u0022YEM\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022BH\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022KW\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022OM\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022QA\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022SA\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022UAE\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022AE\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, 78, \u0022YEM\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022BH\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022KW\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022OM\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022QA\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022UAE\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, 78, \u0022YEM\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022BH\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022KW\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022OM\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022QA\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022SA\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022UAE\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022AE\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, 78, \u0022YEM\u0022]], \u00222061\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2061, \u0022SA\u0022]], \u002279\u0022: [[316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022BH\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022KW\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022OM\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022QA\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022SA\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022UAE\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022AE\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, 79, \u0022YEM\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022BH\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022KW\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022OM\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022QA\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022SA\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022UAE\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022AE\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, 79, \u0022YEM\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022BH\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022KW\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022OM\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022QA\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022SA\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022UAE\u0022], [317, \u0022Zaff Jay Medlines\u0022, 79, \u0022YEM\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022BH\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022KW\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022OM\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022QA\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022SA\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022UAE\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, 79, \u0022YEM\u0022]], \u0022109\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 109, \u0022YEM\u0022]], \u0022155\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 155, \u0022YEM\u0022]], \u00222051\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2051, \u0022YEM\u0022]], \u0022147\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 147, \u0022YEM\u0022]], \u002280\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 80, \u0022AE\u0022]], \u0022120\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 120, \u0022YEM\u0022]], \u0022156\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 156, \u0022YEM\u0022]], \u0022148\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 148, \u0022YEM\u0022]], \u00222040\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2040, \u0022YEM\u0022]], \u00222059\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2059, \u0022SA\u0022]], \u002289\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 89, \u0022AE\u0022]], \u00222041\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2041, \u0022YEM\u0022]], \u002287\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 87, \u0022AE\u0022]], \u0022132\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 132, \u0022AE\u0022]], \u0022145\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 145, \u0022AE\u0022]], \u0022133\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 133, \u0022AE\u0022]], \u002262\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 62, \u0022AE\u0022]], \u002281\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 81, \u0022AE\u0022]], \u002269\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 69, \u0022AE\u0022]], \u002263\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 63, \u0022YEM\u0022]], \u002259\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 59, \u0022YEM\u0022]], \u0022140\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 140, \u0022AE\u0022]], \u002284\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 84, \u0022YEM\u0022]], \u002260\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 60, \u0022YEM\u0022]], \u002273\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 73, \u0022YEM\u0022]], \u00222021\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2021, \u0022YEM\u0022]], \u0022101\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 101, \u0022YEM\u0022]], \u002264\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 64, \u0022AE\u0022]], \u002267\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 67, \u0022AE\u0022]], \u002261\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 61, \u0022YEM\u0022]], \u002275\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 75, \u0022AE\u0022]], \u002291\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 91, \u0022AE\u0022]], \u002297\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 97, \u0022AE\u0022]], \u00222030\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2030, \u0022YEM\u0022]], \u002276\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 76, \u0022AE\u0022]], \u002285\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 85, \u0022AE\u0022]], \u002266\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 66, \u0022YEM\u0022]], \u00222025\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2025, \u0022YEM\u0022]], \u002270\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 70, \u0022YEM\u0022]], \u00222033\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2033, \u0022YEM\u0022]], \u002274\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 74, \u0022YEM\u0022]], \u002268\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 68, \u0022YEM\u0022]], \u002290\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 90, \u0022YEM\u0022]], \u0022121\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 121, \u0022AE\u0022]], \u002293\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022AE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 93, \u0022YEM\u0022]], \u002277\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 77, \u0022AE\u0022]], \u00222023\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2023, \u0022YEM\u0022]], \u00222024\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 2024, \u0022YEM\u0022]], \u0022117\u0022: [[\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022BH\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022KW\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022OM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022QA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022SA\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022UAE\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022YEM\u0022], [\u0022\u0022, \u0022Auto assign\u0022, 117, \u0022AE\u0022]]}");
+        // country -> medical center
+        COUNTRY_MEDICAL_CENTER = JSON.parse("{\u0022SL\u0022: [[6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022BH\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022KW\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022OM\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022QA\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022SA\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022UAE\u0022], [6543, \u0022Shuman Hospital\u0022, \u0022SL\u0022, \u0022YEM\u0022]], \u0022THI\u0022: [[6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022BH\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022KW\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022OM\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022QA\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022UAE\u0022], [6460, \u0022Thonburi Bamrungmuang Hospital\u0022, \u0022THI\u0022, \u0022YEM\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022BH\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022KW\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022OM\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022QA\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022UAE\u0022], [743, \u0022Piyavate  Hospital\u0022, \u0022THI\u0022, \u0022YEM\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022BH\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022KW\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022OM\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022QA\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022SA\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022UAE\u0022], [6443, \u0022CB MEDICAL AND LAB\u0022, \u0022THI\u0022, \u0022YEM\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022BH\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022KW\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022OM\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022QA\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022SA\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022UAE\u0022], [6449, \u0022LOTUS AZURE CENTRE FOR MEDICAL\u0022, \u0022THI\u0022, \u0022YEM\u0022]], \u0022IDN\u0022: [[588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022BH\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022KW\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022OM\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022QA\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022SA\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022UAE\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022AE\u0022], [588, \u0022Higina Medical Center\u0022, \u0022IDN\u0022, \u0022YEM\u0022]], \u0022SYR\u0022: [[530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022BH\u0022], [530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022KW\u0022], [530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022OM\u0022], [530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022QA\u0022], [530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022UAE\u0022], [530, \u0022Al\u002DAmeer Medical Centre\u0022, \u0022SYR\u0022, \u0022YEM\u0022]], \u0022TUR\u0022: [[1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022BH\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022KW\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022OM\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022QA\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022SA\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [1918, \u0022OZEL VITALINE MEDICAL CENTER\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [3233, \u0022Private Gaziantep Anka Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022BH\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022KW\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022OM\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022QA\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022SA\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [3271, \u0022tam\u002Dmed \u005Cu00f6zel hastane\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [1892, \u0022Private Eastern Mediterranean Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022BH\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022KW\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022OM\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022QA\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022SA\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [3238, \u0022Ozel Antakya Akademi Hastanesi\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022BH\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022KW\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022OM\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022QA\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022SA\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [1876, \u0022Special Alfa Eynal Health Services and Suplies ind.trade.co.ltd\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022BH\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022KW\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022OM\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022QA\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022SA\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [1925, \u0022PRIVATE EGE CITY HOSPITAL\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022BH\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022KW\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022OM\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022QA\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022SA\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [3276, \u0022PRIVATE PARK TIP CENTER\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022BH\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022KW\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022OM\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022QA\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022SA\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [3279, \u0022\u005Cu00d6ZEL METROPOL HATAY TIP  MERKEZ\u005Cu0130\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [781, \u0022Memorial Ata\u005Cu015fehir Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [780, \u0022Memorial \u005Cu015ei\u005Cu015fli Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [782, \u0022Memorial Bah\u005Cu00e7elievler Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022BH\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022KW\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022OM\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022QA\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022SA\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [777, \u0022Memorial Ankara Hospital\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022BH\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022KW\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022OM\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022QA\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022SA\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [1903, \u0022Private Antakya Yasam Surgical Medical Center\u0022, \u0022TUR\u0022, \u0022YEM\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022BH\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022KW\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022OM\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022QA\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022SA\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022UAE\u0022], [779, \u0022GUVEN HEALTH GROUP\u0022, \u0022TUR\u0022, \u0022YEM\u0022]], \u0022DZ\u0022: [[8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022BH\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022KW\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022OM\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022QA\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022SA\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022UAE\u0022], [8708, \u0022El\u002DNadjet Diagnostic Center\u0022, \u0022DZ\u0022, \u0022YEM\u0022]], \u0022LB\u0022: [[737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022BH\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022KW\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022OM\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022QA\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022SA\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022UAE\u0022], [737, \u0022Doctors Center Laboratory\u0022, \u0022LB\u0022, \u0022YEM\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022BH\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022KW\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022OM\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022QA\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022SA\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022UAE\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022AE\u0022], [738, \u0022Beirut General Hospital\u0022, \u0022LB\u0022, \u0022YEM\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022BH\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022KW\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022OM\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022QA\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022SA\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022UAE\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022AE\u0022], [733, \u0022Centre d Exploration Medicale Avance\u0022, \u0022LB\u0022, \u0022YEM\u0022]], \u0022MR\u0022: [[753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022BH\u0022], [753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022KW\u0022], [753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022OM\u0022], [753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022QA\u0022], [753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022UAE\u0022], [753, \u0022Clinique De Vinci\u0022, \u0022MR\u0022, \u0022YEM\u0022], [755, \u0022Clinique Bennis\u0022, \u0022MR\u0022, \u0022SA\u0022], [755, \u0022Clinique Bennis\u0022, \u0022MR\u0022, \u0022AE\u0022]], \u0022NIG\u0022: [[8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022BH\u0022], [8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022KW\u0022], [8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022OM\u0022], [8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022QA\u0022], [8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022UAE\u0022], [8675, \u0022EVERIGHT DIAGNOSTIC \u0026 LABORATORY SERVICES LTD.\u0022, \u0022NIG\u0022, \u0022YEM\u0022], [8649, \u0022Me Cure Healthcare Limited \u002D Papa Ajao\u0022, \u0022NIG\u0022, \u0022SA\u0022]], \u0022BD\u0022: [[356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022BH\u0022], [356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022KW\u0022], [356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022OM\u0022], [356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022QA\u0022], [356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022UAE\u0022], [356, \u0022ABC Diagnostic Center\u0022, \u0022BD\u0022, \u0022YEM\u0022], [6434, \u0022Yaqeen Medical Centre\u0022, \u0022BD\u0022, \u0022SA\u0022], [354, \u0022J B Medical Center Ltd\u0022, \u0022BD\u0022, \u0022AE\u0022]], \u0022PHL\u0022: [[640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022BH\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022KW\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022OM\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022QA\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022SA\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [640, \u0022Watanak Diagnostic Center\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [318, \u0022DAVAO PHYSICIANS DIAGNOSTIC SERVICES CENTER INC.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022BH\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022KW\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022OM\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022QA\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022SA\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022AE\u0022], [300, \u0022MABINI MEDICAL CLINIC\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022BH\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022KW\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022OM\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022QA\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022SA\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022AE\u0022], [310, \u0022ANGELINA APOSTOL\u002DPUNZALAN\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022BH\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022KW\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022OM\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022QA\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022SA\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [305, \u0022AMERICAN HOSPITAL\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [601, \u0022RGO Laboratory \u0026 Industrial Diagnostic Centre, Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022BH\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022KW\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022OM\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022QA\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022SA\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022AE\u0022], [309, \u0022L\u002DR MEDICAL \u0026 X\u002DRAY CLINIC\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [313, \u0022PHILIPPINE MEDICAL TESTS SYSTEM.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [303, \u0022ST. MARTIN POLYCLINIC INC.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [579, \u0022Medisense Laboratory Center, Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022BH\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022KW\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022OM\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022QA\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022SA\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022AE\u0022], [307, \u0022ST. PETER PAUL MEDICAL CLINIC INC \u002D Manila\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [602, \u0022YGEIA Medical Center, Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022BH\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022KW\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022OM\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022QA\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022SA\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022AE\u0022], [316, \u0022St. Peter Paul Medical Clinic Inc \u002D Cebu\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [314, \u0022Cebu Physicians Diagnostic  Services Center Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [319, \u0022Medisense Lab. Center Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [578, \u0022Safeway Diagnostic \u0026 Medical Clinic, Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [302, \u0022S.M. LAZO MEDICAL CLINIC INC.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022BH\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022KW\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022OM\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022QA\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022SA\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022AE\u0022], [304, \u0022PHYSICIANS\u005Cu2019 DIAGNOSTIC SERVICES CENTRE\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022BH\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022KW\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022OM\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022QA\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022SA\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022AE\u0022], [587, \u0022Hyatt Diagnostic System, Inc\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022BH\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022KW\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022OM\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022QA\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022SA\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022AE\u0022], [301, \u0022INTERNATIONAL DIAGNOSTIC CENTER\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [308, \u0022CHRISTIAN E. CANGCO MEDICAL CLINIC \u0026 LABORATORY INC.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022BH\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022KW\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022OM\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022QA\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [312, \u0022MYHEALTHYWAY Clinic and Laboratory Corp\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022AE\u0022], [311, \u0022Angelus Medical Clinic Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022BH\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022KW\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022OM\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022QA\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022SA\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [317, \u0022Zaff Jay Medlines\u0022, \u0022PHL\u0022, \u0022YEM\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022BH\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022KW\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022OM\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022QA\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022SA\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022UAE\u0022], [315, \u0022Medisense Laboratory Center Inc.\u0022, \u0022PHL\u0022, \u0022YEM\u0022]], \u0022TNZ\u0022: [[741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022BH\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022KW\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022OM\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022QA\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022SA\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022UAE\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022AE\u0022], [741, \u0022Sali Hospital\u0022, \u0022TNZ\u0022, \u0022YEM\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022BH\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022KW\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022OM\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022QA\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022SA\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022UAE\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022AE\u0022], [740, \u0022London Health Centre\u0022, \u0022TNZ\u0022, \u0022YEM\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022BH\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022KW\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022OM\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022QA\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022SA\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022UAE\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022AE\u0022], [739, \u0022Agakhan Hospital\u0022, \u0022TNZ\u0022, \u0022YEM\u0022]], \u0022ACT\u0022: [[1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022BH\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022KW\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022OM\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022QA\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022SA\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022UAE\u0022], [1506, \u0022Shivvir Diagnostic Centre LLP\u0022, \u0022ACT\u0022, \u0022YEM\u0022], [563, \u0022Carino National C T \u0026 Diagnostic Center\u0022, \u0022ACT\u0022, \u0022AE\u0022]], \u0022TUN\u0022: [[10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022BH\u0022], [10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022KW\u0022], [10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022OM\u0022], [10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022QA\u0022], [10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022UAE\u0022], [10425, \u0022Ben Slama Medical Services\u0022, \u0022TUN\u0022, \u0022YEM\u0022]], \u0022GN\u0022: [[10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022BH\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022KW\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022OM\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022QA\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022SA\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022UAE\u0022], [10363, \u0022SONA MEDICAL CENTER\u0022, \u0022GN\u0022, \u0022YEM\u0022]], \u0022SUD\u0022: [[525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022BH\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022KW\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022OM\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022QA\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022SA\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022UAE\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022AE\u0022], [525, \u0022Al\u002DTaif Medical Centre\u0022, \u0022SUD\u0022, \u0022YEM\u0022]], \u0022BR\u0022: [[7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022BH\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022KW\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022OM\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022QA\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022SA\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022UAE\u0022], [7566, \u0022Kamenge University Hospital Center\u0022, \u0022BR\u0022, \u0022YEM\u0022]], \u0022JR\u0022: [[6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022BH\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022KW\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022OM\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022QA\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022SA\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022UAE\u0022], [6314, \u0022BALSAM MEDICAL CENTER (POLY CLINIC)\u0022, \u0022JR\u0022, \u0022YEM\u0022]], \u0022EGY\u0022: [[1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022BH\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022KW\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022OM\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022QA\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022SA\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022UAE\u0022], [1565, \u0022Ibn Rushed Specialized Clinics\u0022, \u0022EGY\u0022, \u0022YEM\u0022], [646, \u0022El Galala Specialized Clinics\u0022, \u0022EGY\u0022, \u0022AE\u0022]], \u0022so\u0022: [[6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022BH\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022KW\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022OM\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022QA\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022SA\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022UAE\u0022], [6537, \u0022HILAL CITY DAIGNOSTIC CENTER\u0022, \u0022so\u0022, \u0022YEM\u0022]], \u0022NEP\u0022: [[11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022BH\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022KW\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022OM\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022QA\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022SA\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022UAE\u0022], [11969, \u0022City Top Medical Centre P.Ltd\u0022, \u0022NEP\u0022, \u0022YEM\u0022], [554, \u0022Saiba Medical Center\u0022, \u0022NEP\u0022, \u0022AE\u0022]], \u0022KN\u0022: [[5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022BH\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022KW\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022OM\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022QA\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022SA\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022UAE\u0022], [5985, \u0022Cure4life Health Center Ltd\u0022, \u0022KN\u0022, \u0022YEM\u0022], [696, \u0022Bayan Diagnostic Center\u0022, \u0022KN\u0022, \u0022AE\u0022]], \u0022UG\u0022: [[5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022BH\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022KW\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022OM\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022QA\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022SA\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022UAE\u0022], [5984, \u0022Oman Medical Centre\u0022, \u0022UG\u0022, \u0022YEM\u0022], [729, \u0022City Medical\u0022, \u0022UG\u0022, \u0022AE\u0022]], \u0022Sri\u0022: [[489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022BH\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022KW\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022OM\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022QA\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022SA\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022UAE\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022AE\u0022], [489, \u0022Colombo Medilab (Pvt.) Ltd.\u0022, \u0022Sri\u0022, \u0022YEM\u0022]], \u0022PAK\u0022: [[1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022BH\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022KW\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022OM\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022QA\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022SA\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022UAE\u0022], [1672, \u0022RR Diagnostics\u0022, \u0022PAK\u0022, \u0022YEM\u0022], [671, \u0022Paramount Medical Clinic\u0022, \u0022PAK\u0022, \u0022AE\u0022]], \u0022ETH\u0022: [[10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022BH\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022KW\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022OM\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022QA\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022SA\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022UAE\u0022], [10259, \u0022Ewen Internal Medicine Speciaty Clinic\u0022, \u0022ETH\u0022, \u0022YEM\u0022], [596, \u0022Bethzatha Health Services\u0022, \u0022ETH\u0022, \u0022AE\u0022]]}");
+        // city -> premium medical center
+        CITY_PREMIUM_MEDICAL_CENTERS = JSON.parse("{}");
+        // country -> premium medical center
+        COUNTRY_PREMIUM_MEDICAL_CENTER = JSON.parse("{}");
+        // MC -> working days
+        GROUPED_MC_WORKING_DAYS = JSON.parse("{}");
+
+        MANUAL_MEDICAL_CENTER_COUNTRIES = JSON.parse("[\u0022PHL\u0022, \u0022TR\u0022, \u0022TUR\u0022, \u0022TZ\u0022, \u0022TZA\u0022, \u0022ML\u0022, \u0022MLI\u0022, \u0022NE\u0022, \u0022NER\u0022, \u0022TH\u0022, \u0022THA\u0022, \u0022TNZ\u0022, \u0022MI\u0022, \u0022NG\u0022, \u0022THI\u0022, \u0022LBN\u0022, \u0022LB\u0022]");
+        FREE_MEDICAL_CENTER_COUNTRIES = JSON.parse("[\u0022SDN\u0022, \u0022SUD\u0022, \u0022PHL\u0022, \u0022PH\u0022]");
+
+        APPOINTMENT_NATIONAL_ID_REQUIRED_MAP = JSON.parse("{\u0022KW\u0022: [\u0022ACT\u0022, \u0022PAK\u0022, \u0022BD\u0022, \u0022IND\u0022]}");
+        STANDARD_APPOINTMENT_PRICE = 10.00;
+        function showJSMessage(type, message) {
+            const container = document.getElementById('js-messages');
+            const alertClass = {
+                success: 'positive',
+                error: 'negative',
+                warning: 'warning',
+                info: 'info'
+            }[type] || 'info';
+
+            container.innerHTML = `
+                <div class="ui ${alertClass} message">
+                    <i class="close icon" onclick="this.parentElement.remove();"></i>
+                    <div class="header">${message}</div>
+                </div>
+            `;
+
+        }
+        // disable submit btn on submit form
+        $('form').submit(function (e) {
+            $(this).find(':submit').attr('disabled', 'disabled');
+            const country = $("#id_country").val(); // assuming your country select has id="id_country"
+            const medicalCenterSelect = $("#id_medical_center");
+            const selectedValue = medicalCenterSelect.val();
+
+            // Check if country is NOT in manual appointment countries
+            if (!MANUAL_MEDICAL_CENTER_COUNTRIES.includes(country)) {
+                // Allow only "" or "Auto assign"
+                if (selectedValue !== "" && selectedValue.toLowerCase() !== "auto assign") {
+                    e.preventDefault(); // stop form submission
+
+                     showJSMessage('error', "You cannot manually select a medical center for auto-assign countries.");
+                     $(this).find(':submit').removeAttr('disabled');
+                    // Or use Semantic UI error message if you prefer
+                    return false;
+                }
+            }
+        });
+
+        $("form").bind("invalid-form.validate", function () {
+            $(this).find(':submit').prop('disabled', false);
+        });
+
+        function cancelAppointment() {
+            window.location.href = '/';
+        }
+
+        $('.cancel-btn').click(function (e) {
+            e.preventDefault();
+
+            // Assume "my-form" is the class or ID of your form
+            const form = document.querySelector("form.booking-appointment-form"); // Or: "form.my-form-class", "form#myFormId"
+
+            // Get all relevant input fields inside the form
+            const fields = form.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], select, textarea");
+
+            let hasFilledField = false;
+
+            fields.forEach(field => {
+                if (field.name === "premium_medical_center") {
+                    return; // Skip this iteration
+                }
+
+                const value = field.value.trim();
+                if (
+                    (field.tagName === 'SELECT' && field.selectedIndex > 0) ||
+                    (field.type === 'checkbox' && field.checked) ||
+                    (field.type === 'radio' && field.checked) ||
+                    (value !== '')
+                ) {
+                    hasFilledField = true;
+                }
+            });
+
+            if (hasFilledField) {
+                $('.cancel-appointment-confirm-modal').modal('show'); // Show modal
+                // Remove saved localstorage data
+                const visaSelect = $("select[name='visa_type']");
+                localStorage.removeItem(visaSelect.attr("id"));
+            } else {
+                cancelAppointment(); // No fields filled → redirect
+            }
+        });
+    </script>
+
+    
+        
+    <script>
+        const markerIsActive = '';
+        const markerProjectID = '';
+        if (markerIsActive === 'True') {
+            window.markerConfig = {
+                project: markerProjectID,
+                source: 'snippet'
+            };
+
+            !function (e, r, a) {
+                if (!e.__Marker) {
+                    e.__Marker = {};
+                    var t = [], n = {__cs: t};
+                    ["show", "hide", "isVisible", "capture", "cancelCapture", "unload", "reload", "isExtensionInstalled", "setReporter", "setCustomData", "on", "off"].forEach(function (e) {
+                        n[e] = function () {
+                            var r = Array.prototype.slice.call(arguments);
+                            r.unshift(e), t.push(r)
+                        }
+                    }), e.Marker = n;
+                    var s = r.createElement("script");
+                    s.async = 1, s.src = "https://edge.marker.io/latest/shim.js";
+                    var i = r.getElementsByTagName("script")[0];
+                    i.parentNode.insertBefore(s, i)
+                }
+            }(window, document);
+        }
+    </script>
+
+        
+            <script src="/static/js/instant-notifications.js"></script>
+        
+    
+    
+        <script src="/static/js/booking-appointment-form.js"></script>
+    
+    <link href="/static/vendor/semantic-ui-calendar/calendar.min.css" media="all" rel="stylesheet">
+<link href="/static/css/booking-appointment-form.css" media="all" rel="stylesheet">
+
+</body>
+</html>

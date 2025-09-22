@@ -197,19 +197,28 @@ function triggerAutomationInReceiverTab(row: any) {
     el.dispatchEvent(new Event("change", { bubbles: true }));
   };
 
-  // TODO: map WAFID form selectors correctly for your page
-  setVal("input[name='name']", (row as any)?.name);
+  // Map WAFID form selectors for the page
+  setVal("input[name='first_name']", (row as any)?.firstName);
+  setVal("input[name='last_name']", (row as any)?.lastName);
+  setVal("input[name='dob']", (row as any)?.dob); // Date of Birth
+  setVal("select[name='country']", (row as any)?.country);
+  setVal("select[name='city']", (row as any)?.city);
+  setVal("select[name='traveled_country']", (row as any)?.traveledCountry);
+  setVal("select[name='nationality']", (row as any)?.nationality);
   setVal("input[name='email']", (row as any)?.email);
   setVal("input[name='phone']", (row as any)?.phone);
-  setVal("input[name='national_id']", (row as any)?.nationalId);
-  setVal("input[name='passport']", (row as any)?.passport);
-  setVal("input[name='city']", (row as any)?.city);
-  setVal("input[name='country']", (row as any)?.country);
   setVal("input[name='appointment_date']", (row as any)?.appointmentDate);
+  setVal("select[name='medical_center']", (row as any)?.medicalCenter); // Medical center
+
+  // Appointment type radio buttons (standard or premium)
+  if ((row as any)?.appointmentType === 'standard') {
+    setVal("input[name='appointment_type'][value='standard']", 'standard');
+  } else if ((row as any)?.appointmentType === 'premium') {
+    setVal("input[name='appointment_type'][value='premium']", 'premium');
+  }
 
   // Submit button
-  const submitBtn =
-    document.querySelector<HTMLButtonElement>("button[type='submit'], .btn-submit, [data-action='submit']");
+  const submitBtn = document.querySelector<HTMLButtonElement>("button[type='submit'], .btn-submit, [data-action='submit']");
   if (submitBtn) {
     submitBtn.click();
   } else {
@@ -282,6 +291,7 @@ function triggerAutomationInReceiverTab(row: any) {
     }
   }, 60_000);
 }
+
 
 // Make this a module file for MV3 type safety
 export {};
