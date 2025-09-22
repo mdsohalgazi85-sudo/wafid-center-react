@@ -372,6 +372,33 @@ type WchRow = {
   visa_type?: string; email?: string; phone?: string; national_id?: string; applied_position?: string | number;
 };
 
+const a_normalizeString = (value: unknown) => {
+  if (value == null) return "";
+  return typeof value === "string" ? value.trim() : String(value).trim();
+};
+
+const a_isPremiumAppointment = (row: WchRow) =>
+  a_normalizeString((row as any).appointment_type ?? (row as any).appointmentType).toLowerCase() === "premium";
+
+const a_autoVerifyEmail = (row: WchRow) => {
+  if (!a_isPremiumAppointment(row)) return;
+  const email = a_normalizeString((row as any).email ?? (row as any).Email);
+  if (!email) return;
+  try {
+    window.localStorage?.setItem("verifiedEmail", email);
+    window.localStorage?.setItem("verifiedEmailTime", Date.now().toString());
+    window.localStorage?.removeItem("otpExpiryTime");
+  } catch (error) {
+    debug("Failed to set verified email in localStorage", error);
+  }
+  const input = a_qs<HTMLInputElement>("#id_email") || a_qs<HTMLInputElement>('input[name="email"]');
+  if (input) {
+    if (a_normalizeString(input.value) !== email) input.value = email;
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+};
+
 async function a_fillBasics(row: WchRow){
   a_setSelectByValue(a_qs<HTMLSelectElement>('#id_country, select[name="country"]'), row.country);
   a_setSelectByValue(a_qs<HTMLSelectElement>('#id_city, select[name="city"]'), row.city);
@@ -380,6 +407,7 @@ async function a_fillBasics(row: WchRow){
     const ok = a_setRadioByValue("appointment_type", row.appointment_type);
     if (!ok) a_setSelectByValue(a_qs<HTMLSelectElement>('#appointment_type, select[name="appointment_type"]'), row.appointment_type);
   }
+  if (a_isPremiumAppointment(row)) await a_sleep(150);
   const map: Record<string, string[]> = {
     first_name:['input[name="first_name"]', "#first_name"],
     last_name:['input[name="last_name"]', "#last_name"],
@@ -415,6 +443,7 @@ async function a_fillBasics(row: WchRow){
       }
     }
   }
+  a_autoVerifyEmail(row);
 }
 async function a_setCentersFromCodes(row: WchRow){
   const mcSel = (document.getElementById("id_medical_center") as HTMLSelectElement) || a_qs<HTMLSelectElement>('select[name="medical_center"]');
