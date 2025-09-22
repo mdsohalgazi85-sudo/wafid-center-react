@@ -21,7 +21,25 @@
 
       if (!data || typeof data !== "object" || data.type !== requestType) return;
 
-      const { requestId, index, row, timeoutMs } = data;
+      const {
+        type: _ignoredType,
+        requestId,
+        index,
+        row,
+        timeoutMs,
+        receiverTabUrl,
+        autoCloseMs,
+        ...forwardExtras
+      } = data as {
+        type?: string;
+        requestId?: string;
+        index?: number;
+        row?: unknown;
+        timeoutMs?: number;
+        receiverTabUrl?: string;
+        autoCloseMs?: number;
+        [key: string]: unknown;
+      };
 
       if (!requestId || pendingRequests.has(requestId)) return;
 
@@ -39,7 +57,17 @@
 
       pendingRequests.set(requestId, { origin: event.origin, timerId });
 
-      chrome.runtime.sendMessage({ type: requestType, requestId, index, row }, (response) => {
+      const bridgeRequest = {
+        type: requestType,
+        requestId,
+        index,
+        row,
+        receiverTabUrl,
+        autoCloseMs,
+        ...forwardExtras,
+      };
+
+      chrome.runtime.sendMessage(bridgeRequest, (response) => {
         const lastError = chrome.runtime?.lastError;
         const requestEntry = pendingRequests.get(requestId);
         if (!requestEntry) return;
